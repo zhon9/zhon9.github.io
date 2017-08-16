@@ -56,5 +56,19 @@ $tpsql = " reid=0 AND ishidden<>1 AND channeltype>0 ";
 // 去掉验证码认证
 /data/safe/inc_safe_config.php 里 $safe_gdopen = '1,2,3,4,5,7';  //1 注册会员 2前台登陆 6后台登陆 有就要验证
 
+// 后台变量表
+dede_sysconfig
+
+//调用某栏目链接
+{dede:type typeid='35'}[field:typeurl/]{/dede:type}
+
+//文章列表
+{dede:arclist typeid='23' titlelen='60' row='10'}
+<a href="[field:arcurl/]">[field:image/]</a></div>
+{/dede:arclist}
+
+//分页
+{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+
 
 ```
