@@ -28,7 +28,7 @@ dede_archives
 // 循环二级栏目
 {dede:channelartlist typeid='top' noself='yes'}
   <li id="menu-{dede:field name='id'/}"><a htef="{dede:field name='typeurl'/}"><span>{dede:field name='typename'/}</span></a>
-    <ul class='sub-menu'>
+    <ul>
       {dede:channel type='son' noself='yes'}
         <li id='menu-[field:id/]'><a href='[field:typelink/]'><span>[field:typename/]</span></a></li>
       {/dede:channel}
@@ -64,11 +64,17 @@ dede_sysconfig
 
 //文章列表
 {dede:arclist typeid='23' titlelen='60' row='10'}
-<a href="[field:arcurl/]">[field:image/]</a></div>
+<a href="[field:arcurl/]">[field:image/]</a>
 {/dede:arclist}
 
 //分页
 {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
 
-
+//首页调用其他栏目
+{dede:arclist channelid='17' addfields='forex,silver,gold,oil' }
+<li>
+<div><a href="[field:arcurl/]">[field:image/]</a></div>
+<a href="[field:arcurl/]">外汇[field:forex/]$ 白银[field:silver/]$<br/>
+黄金[field:gold/]$ 原油[field:oil/]$</a> </li>
+{/dede:arclist}
 ```
