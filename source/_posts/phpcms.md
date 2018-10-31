@@ -10,20 +10,21 @@ tags: [phpcms]
 
 ``` php
 // 调用一个栏目链接
-{$CATEGORYS[21][url]}
+{$CATEGORYS[1][url]}
 
 // 三级栏目
 {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
 {loop $data $c}
     <li class="{if $parentid == $c['catid'] || $catid == $c['catid']}active{/if}"><a href="{$c[url]}">{$c[catname]}</a>
     {if $c[child]}
+        <ul>
         {loop subcat($c['catid']) $c2}
-        <ul><li> {$c2['catname']}</li>
+        <li> {$c2['catname']}</li>
             {loop subcat($c2['catid']) $c3}
                 <li> <a href="{$c3['url']}">{$c3['catname']}</a> </li>
             {/loop}
-        </ul>
         {/loop}
+        </ul>
     {/if}
     </li>
 {/loop}
@@ -37,8 +38,8 @@ tags: [phpcms]
     {$r[title]}
     {str_cut($r[description],200)}
     {date('Y-m-d H:i:s',$r[inputtime])}
-    {$pages}
 {/loop}
+<div>{$pages}</div>
 {/pc}
 
 // 面包屑导航
@@ -57,6 +58,7 @@ tags: [phpcms]
 
 // 调用header
 {template "content","header"}
+{template "content","footer"}
 
 // title keywords description
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
