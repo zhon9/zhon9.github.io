@@ -28,3 +28,82 @@ HTML, CSS, JavaScript, JSON, React/JSX and Vue code formatter for Sublime Text 2
 Full-featured code intelligence and smart autocomplete engine
 ### SublimeREPL
 SublimeREPL - run an interpreter inside ST2 (Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python + virtualenv, R, Ruby, Scala...)
+### Auto​File​Name
+Sublime Text plugin that autocompletes filenames
+
+### Setting
+```json
+{
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Default.sublime-theme",
+	"word_wrap": true
+}
+
+```
+
+### Key Bingdings
+```json
+[
+	//格式化代码,single_line参数删除时，格式化只影响当前光标所在行
+	{"keys": ["ctrl+alt+l"], "command": "reindent" ,"args": {"single_line": false}},
+	//emmet
+	{
+    "keys": ["tab"],
+    "command": "expand_abbreviation_by_tab",
+
+    // put comma-separated syntax selectors for which 
+    // you want to expandEmmet abbreviations into "operand" key 
+    // instead of SCOPE_SELECTOR.
+    // Examples: source.js, text.html - source
+    "context": [{
+            "operand": "source.js",
+            "operator": "equal",
+            "match_all": true,
+            "key": "selector"
+        },
+
+        // run only if there's no selected text
+        {
+            "match_all": true,
+            "key": "selection_empty"
+        },
+
+        // don't work if there are active tabstops
+        {
+            "operator": "equal",
+            "operand": false,
+            "match_all": true,
+            "key": "has_next_field"
+        },
+
+        // don't work if completion popup is visible and you
+        // want to insert completion with Tab. If you want to
+        // expand Emmet with Tab even if popup is visible -- 
+        // remove this section
+        {
+            "operand": false,
+            "operator": "equal",
+            "match_all": true,
+            "key": "auto_complete_visible"
+        }, {
+            "match_all": true,
+            "key": "is_abbreviation"
+        }
+    ]
+	},
+    //sublimerepl
+    { "keys": ["f5"], "caption": "SublimeREPL:Python", 
+                      "command": "run_existing_window_command", "args":
+                      {
+                           "id": "repl_python_run",
+                           "file": "config/Python/Main.sublime-menu"
+                      } 
+    }
+]
+
+
+```
