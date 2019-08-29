@@ -1,4 +1,4 @@
-{{ js('https://unpkg.com/jquery@3.4.1/dist/jquery.js') }}
+{{ js('https://cdn.bootcss.com/jquery/3.4.1/jquery.js') }}
 
 {% if theme.lightbox %}
   <script></script>

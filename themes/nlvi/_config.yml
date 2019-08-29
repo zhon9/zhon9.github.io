@@ -90,16 +90,16 @@ comments:
 
 # sub //Please just fill out ID.
 sub:
-  facebook:
-  twitter:
-  instagram:
-  weibo:
-  zhihu:
-  github:
-  linkedin:
-  douban:
-  medium:
-  yuque:
+#  facebook:
+#  twitter:
+#  instagram:
+#  weibo:
+#  zhihu:
+  github: https://github.com/zhon9
+#  linkedin:
+#  douban:
+#  medium:
+#  yuque:
 
 #Friend link
 # friendLink:
