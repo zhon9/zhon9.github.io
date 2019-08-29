@@ -2,10 +2,10 @@
 title: 搭建lnmp
 date: 2017-09-20
 ---
-
-### 搭建nginx静态服务器 ###
-使用 yum 安装 Nginx：
+lnmp
 <!-- more -->
+### 搭建nginx静态服务器
+使用 yum 安装 Nginx：
 ``` bash
 yum install nginx -y
 ```

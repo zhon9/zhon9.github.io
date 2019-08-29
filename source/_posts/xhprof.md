@@ -3,9 +3,7 @@ title: XHProf windows 安装
 date: 2017-03-11 19:30:13
 tags: [tool]
 ---
-
 XHProf 是一个分层PHP性能分析工具，可以看到php程序各个函数的执行次数和执行时间等数据，帮助优化php程序。
-
 <!-- more -->
 
 ## 下载

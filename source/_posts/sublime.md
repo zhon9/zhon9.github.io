@@ -4,7 +4,6 @@ date: 2018-11-06 14:18:12
 tags: sublime
 ---
 sublime 插件
-
 <!-- more -->
 ### A File Icon
 Sublime Text File-Specific Icons for Improved Visual Grepping
@@ -30,6 +29,7 @@ Full-featured code intelligence and smart autocomplete engine
 SublimeREPL - run an interpreter inside ST2 (Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python + virtualenv, R, Ruby, Scala...)
 ### Auto​File​Name
 Sublime Text plugin that autocompletes filenames
+### Compare Side-By-Side
 
 ### Setting
 ```json
@@ -39,6 +39,7 @@ Sublime Text plugin that autocompletes filenames
 	[
 		"Vintage"
 	],
+    "save_on_focus_lost": true,
 	"theme": "Default.sublime-theme",
 	"word_wrap": true
 }

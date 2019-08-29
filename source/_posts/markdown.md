@@ -2,10 +2,10 @@
 title: markdown语法
 date: 2017-09-19
 ---
-## Welcome to MarkdownPad 2 ##
-
-**MarkdownPad** is a full-featured Markdown editor for Windows.
+Welcome to MarkdownPad 2
 <!-- more -->
+**MarkdownPad** is a full-featured Markdown editor for Windows.
+
 ### Built exclusively for Markdown ###
 
 Enjoy first-class Markdown support with easy access to  Markdown syntax and convenient keyboard shortcuts.
