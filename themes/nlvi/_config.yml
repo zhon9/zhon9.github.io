@@ -113,7 +113,7 @@ analytics:
   baidu:
 
 #visit_count(Powered by busuanzi on http://busuanzi.ibruce.info/)
-visit_count: true
+visit_count: false
 
 # ===========================================
 # Theme Settings
