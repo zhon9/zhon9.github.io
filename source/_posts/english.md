@@ -3,8 +3,6 @@ title: english
 date: 2019-08-29 15:40:35
 tags:
 ---
-learn english
-<!-- more -->
 ##### 学习步骤
 1. 看单词的英语解释
 2. 多看例句体会意思

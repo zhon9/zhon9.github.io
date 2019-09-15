@@ -7,7 +7,7 @@ title: Lv 2
 subtitle: 
 description: 知易行难
 author: Lv 2
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -72,12 +72,13 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Nlvi
+theme: next
 
 search:
   path: search.xml
   field: post
-  content: true
+  format: html
+  limit: 10000
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
