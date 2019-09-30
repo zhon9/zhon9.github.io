@@ -27,48 +27,47 @@ tags: sublime
 
 ---
 ### Plugins
-- A File Icon
-Sublime Text File-Specific Icons for Improved Visual Grepping
-- AdvancedNewFIle
-File creation plugin for Sublime Text 2 and Sublime Text 3.
-- BracketHighlighter
-Bracket and tag highlighter for Sublime Text 
-- DocBlockr
-Simplifies writing DocBlock comments in Javascript, PHP, CoffeeScript, Actionscript, C & C++
-- Emmet
-Emmet for Sublime Text
 - Package Control
 A full-featured package manager
-- Side Bra
-Duplicate files and copy paths from the Side Bar in Sublime Text 3
-- Babel
-Syntax definitions for ES6 JavaScript with React JSX extensions.
-- HTML-CSS-JS Prettify
-HTML, CSS, JavaScript, JSON, React/JSX and Vue code formatter for Sublime Text 2 and 3 via node.js
-- SublimeCodeIntel
-Full-featured code intelligence and smart autocomplete engine
-- SublimeREPL
-SublimeREPL - run an interpreter inside ST2 (Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python + virtualenv, R, Ruby, Scala...)
-- Auto​File​Name
-Sublime Text plugin that autocompletes filenames
-- Compare Side-By-Side
-This package adds a simple side-by-side comparison tool to Sublime Text 2 and 3.
+
+- A File Icon
+Sublime Text File-Specific Icons for Improved Visual Grepping
 - Material Theme
 Material Theme, the most epic theme for Sublime Text 3 by Mattia Astorino
-- SublimeLinter
-- SublimeLinter-php
-This linter plugin for SublimeLinter provides an interface to php -l. It will be used with files that have the “PHP”, “HTML”, or “HTML 5” syntax.
-- ConvertToUTF8
-A Sublime Text 2 & 3 plugin for editing and saving files encoded in GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS, etc.
-- Laravel 5 Artisan
-Laravel 5 Artisan Commands for Sublime Text 3
-- SideBarEnhancements
-Enhancements to Sublime Text sidebar. Files and folders.
+-Package​Resource​Viewer
+Sublime Text plugin to view package resources.
+- Compare Side-By-Side
+This package adds a simple side-by-side comparison tool to Sublime Text 2 and 3.
 - Git
 Plugin for some git integration into sublime text
 - GitGutter
 A Sublime Text 2/3 plugin to see git diff in gutter
 
+- BracketHighlighter
+Bracket and tag highlighter for Sublime Text
+- Emmet
+Emmet for Sublime Text
+- HTML-CSS-JS Prettify
+HTML, CSS, JavaScript, JSON, React/JSX and Vue code formatter for Sublime Text 2 and 3 via node.js
+
+- SublimeLinter
+- SublimeLinter-php
+This linter plugin for SublimeLinter provides an interface to php -l. It will be used with files that have the “PHP”, “HTML”, or “HTML 5” syntax.
+- phpfmt
+This is a stable snapshot (version 6125cf9) of the phpfmt plugin for Sublime Text
+
+- SublimeCodeIntel
+Full-featured code intelligence and smart autocomplete engine
+- SublimeREPL
+SublimeREPL - run an interpreter inside ST2 (Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python + virtualenv, R, Ruby, Scala...)
+- ConvertToUTF8
+A Sublime Text 2 & 3 plugin for editing and saving files encoded in GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS, etc.
+- Laravel 5 Artisan
+Laravel 5 Artisan Commands for Sublime Text 3
+- Babel
+Syntax definitions for ES6 JavaScript with React JSX extensions.
+- Auto​File​Name
+Sublime Text plugin that autocompletes filenames
 ---
 
 ### Setting
