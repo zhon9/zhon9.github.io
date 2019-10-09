@@ -1,7 +1,7 @@
 ---
 title: windows使用ApacheBench（ab）做网站压力测试
 date: 2017-02-28 19:30:13
-tags: [tool]
+tags: [tool,windows]
 ---
 Apache Bench是著名Web服务器软件apache附带的一个小工具，它可以同时模拟多个并发请求，测试apache等Web服务器的最大承载压力，同时也可以根据Apache Bench提供的测试结果对服务器性能参数进行调整。
 <!-- more -->

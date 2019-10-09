@@ -1,7 +1,7 @@
 ---
 title: phpcms
 date: 2018-04-27 20:22:20
-tags: [phpcms]
+tags: [phpcms,php]
 ---
 常用标签，使用记录
 <!-- more -->

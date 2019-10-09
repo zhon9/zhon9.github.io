@@ -1,6 +1,7 @@
 ---
 title: 搭建lnmp
 date: 2017-09-20
+tag: [linux]
 ---
 lnmp
 <!-- more -->
