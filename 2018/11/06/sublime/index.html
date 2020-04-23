@@ -1,521 +1,544 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+
+
+
+
+
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="browsermode" content="application">
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Lv 2">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="msapplication-navbutton-color" content="#666666">
-<meta name= "format-detection" content="telephone=no" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.3.8">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 
 
-
-  <meta name="description" content="知易行难">
-
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
-  <meta name="keywords" content="sublime, nlvi" />
-
-
-<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
-<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
-<link rel="stylesheet" href="/style/style.css">
-<script>
-  var nlviconfig = {
-    title: "Lv 2",
-    author: "Lv 2",
-    baseUrl: "/",
-    theme: {
-      scheme: "balance",
-      lightbox: true,
-      animate: true,
-      search: true,
-      friends: false,
-      reward: false,
-      pjax: false,
-      lazy: false,
-      toc: true
-    }
-  }
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
 </script>
 
+  <meta name="description" content="Shortcut 搜索文件：ctrl+p 输入文件名 搜索函数/方法：ctrl+p 输入“文件名@方法名” 如 User@show 跳转到指定行：ctrl+p 输入文件名:行号,只输入: 时在当前文件跳转 查找当前文件方法：ctrl+r 返回/前进编辑位置：Alt + -、Alt + Shift + - 切换标签页：Ctrl + PgUp、Ctrl + PgDn 选中单词：Ctrl + D 连续按">
+<meta name="keywords" content="sublime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sublime note">
+<meta property="og:url" content="https://zhon9.github.io/2018/11/06/sublime/index.html">
+<meta property="og:site_name" content="Lv 2">
+<meta property="og:description" content="Shortcut 搜索文件：ctrl+p 输入文件名 搜索函数/方法：ctrl+p 输入“文件名@方法名” 如 User@show 跳转到指定行：ctrl+p 输入文件名:行号,只输入: 时在当前文件跳转 查找当前文件方法：ctrl+r 返回/前进编辑位置：Alt + -、Alt + Shift + - 切换标签页：Ctrl + PgUp、Ctrl + PgDn 选中单词：Ctrl + D 连续按">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-23T01:39:02.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sublime note">
+<meta name="twitter:description" content="Shortcut 搜索文件：ctrl+p 输入文件名 搜索函数/方法：ctrl+p 输入“文件名@方法名” 如 User@show 跳转到指定行：ctrl+p 输入文件名:行号,只输入: 时在当前文件跳转 查找当前文件方法：ctrl+r 返回/前进编辑位置：Alt + -、Alt + Shift + - 切换标签页：Ctrl + PgUp、Ctrl + PgDn 选中单词：Ctrl + D 连续按">
+  <link rel="canonical" href="https://zhon9.github.io/2018/11/06/sublime/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>sublime note | Lv 2</title>
+  
 
 
 
-    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
-
-
-
-
-    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
 
 
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
-
-
-
-
-<style>
-@font-face {
-  font-family: "Allura";
-  src: url('/font/allura/allura.ttf');
-}
-</style>
-
-  <title> sublime plugins · Lv 2 </title>
 </head>
-<body>
-  <div class="container">
-    <header class="header" id="header">
-  <div class="header-wrapper">
-    <div class="logo">
-  <div class="logo-inner syuanpi tvIn" style="display:none;">
-    <h1><a href="/">Lv 2</a></h1>
-    
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lv 2</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
 
-    <nav class="main-nav">
+
+<nav class="site-nav">
   
-  <ul class="main-nav-list syuanpi tvIn">
-  
-    <li class="menu-item">
-      <a href="javascript:;" id="search-btn" aria-label="Search">
-        <i class="iconfont icon-search"></i>
-      </a>
-    </li>
-  
-  
-  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
     
-  
-    <li class="menu-item">
-      <a href="/" id="article">
-        <span class="base-name">
-          
-            ARTICLE
-          
-        </span>
-      </a>
-    </li>
-  
-  
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
     
-  
-    <li class="menu-item">
-      <a href="/archives" id="archives">
-        <span class="base-name">
-          
-            ARCHIVES
-          
-        </span>
-      </a>
-    </li>
-  
-  
-    
-  
-    <li class="menu-item">
-      <a href="javascript:;" id="tags">
-        <span class="base-name">
-          
-            TAGS
-          
-        </span>
-      </a>
-    </li>
-  
-  
-    
-  
-    <li class="menu-item">
-      <a href="/about" id="about">
-        <span class="base-name">
-          
-            ABOUT
-          
-        </span>
-      </a>
-    </li>
-  
-  
-    
-      <li class="menu-item">
-        <a href="javascript:;" id="switch-toc">INDEX</a>
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
       </li>
     
-  
   </ul>
-  
-</nav>
 
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
   </div>
-</header>
-<div class="mobile-header" id="mobile-header">
-  <div class="mobile-header-nav">
-    <div class="mobile-header-item" id="mobile-left">
-      <div class="header-menu-item">
-        <div class="header-menu-line"></div>
-      </div>
-    </div>
-    <h1 class="mobile-header-title">
-      <a href="/">Lv 2</a>
-    </h1>
-    <div class="mobile-header-item"></div>
-  </div>
-  <div class="mobile-header-body">
-    <ul class="mobile-header-list">
-      
-        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
-          <a href="/" >
-            
-              ARTICLE
-            
-          </a>
-        </li>
-      
-        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
-          <a href="/archives" >
-            
-              ARCHIVES
-            
-          </a>
-        </li>
-      
-        <li class="mobile-nav-item syuanpi fadeInRightShort back-2">
-          <a href="javascript:;" id="mobile-tags">
-            
-              TAGS
-            
-          </a>
-        </li>
-      
-        <li class="mobile-nav-item syuanpi fadeInRightShort back-3">
-          <a href="/about" >
-            
-              ABOUT
-            
-          </a>
-        </li>
-      
-    </ul>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
   </div>
 </div>
-
-
-  
-  
-  <aside class="post-toc">
-    <div class="title"><span>Index</span></div>
-    <div class="toc-inner">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-File-Icon"><span class="toc-text">A File Icon</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AdvancedNewFIle"><span class="toc-text">AdvancedNewFIle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BracketHighlighter"><span class="toc-text">BracketHighlighter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DocBlockr"><span class="toc-text">DocBlockr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Emmet"><span class="toc-text">Emmet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Package-Control"><span class="toc-text">Package Control</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Side-Bra"><span class="toc-text">Side Bra</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Babel"><span class="toc-text">Babel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML-CSS-JS-Prettify"><span class="toc-text">HTML-CSS-JS Prettify</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SublimeCodeIntel"><span class="toc-text">SublimeCodeIntel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SublimeREPL"><span class="toc-text">SublimeREPL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Auto​File​Name"><span class="toc-text">Auto​File​Name</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Compare-Side-By-Side"><span class="toc-text">Compare Side-By-Side</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Material-Theme"><span class="toc-text">Material Theme</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SublimeLinter"><span class="toc-text">SublimeLinter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SublimeLinter-php"><span class="toc-text">SublimeLinter-php</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ConvertToUTF8"><span class="toc-text">ConvertToUTF8</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Laravel-5-Artisan"><span class="toc-text">Laravel 5 Artisan</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SideBarEnhancements"><span class="toc-text">SideBarEnhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git"><span class="toc-text">Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GitGutter"><span class="toc-text">GitGutter</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting"><span class="toc-text">Setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Key-Bingdings"><span class="toc-text">Key Bingdings</span></a>
-    </div>
-  </aside>
-
-
-
-
-
-
-    <div class="container-inner" style="display:none;">
-      <main class="main" id="main">
-        <div class="main-wrapper">
-          
-    
-  
-  <article class="
-  post
-   is_post 
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInRightShort back-1">
-        <div class="post-time-wrapper">
-          
-          <time>2018-11-06</time>
-          
-        </div>
-      </div>
-      <h2 class="post-title syuanpi fadeInRightShort back-2">
-        
-          sublime plugins
-        
-      </h2>
     </header>
-    <div class="post-content syuanpi fadeInRightShort back-3">
-      
-        <p>sublime 插件<br><a id="more"></a></p>
-<h4 id="A-File-Icon"><a href="#A-File-Icon" class="headerlink" title="A File Icon"></a>A File Icon</h4><p>Sublime Text File-Specific Icons for Improved Visual Grepping</p>
-<h4 id="AdvancedNewFIle"><a href="#AdvancedNewFIle" class="headerlink" title="AdvancedNewFIle"></a>AdvancedNewFIle</h4><p>File creation plugin for Sublime Text 2 and Sublime Text 3.</p>
-<h4 id="BracketHighlighter"><a href="#BracketHighlighter" class="headerlink" title="BracketHighlighter"></a>BracketHighlighter</h4><p>Bracket and tag highlighter for Sublime Text </p>
-<h4 id="DocBlockr"><a href="#DocBlockr" class="headerlink" title="DocBlockr"></a>DocBlockr</h4><p>Simplifies writing DocBlock comments in Javascript, PHP, CoffeeScript, Actionscript, C &amp; C++</p>
-<h4 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h4><p>Emmet for Sublime Text</p>
-<h4 id="Package-Control"><a href="#Package-Control" class="headerlink" title="Package Control"></a>Package Control</h4><p>A full-featured package manager</p>
-<h4 id="Side-Bra"><a href="#Side-Bra" class="headerlink" title="Side Bra"></a>Side Bra</h4><p>Duplicate files and copy paths from the Side Bar in Sublime Text 3</p>
-<h4 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h4><p>Syntax definitions for ES6 JavaScript with React JSX extensions.</p>
-<h4 id="HTML-CSS-JS-Prettify"><a href="#HTML-CSS-JS-Prettify" class="headerlink" title="HTML-CSS-JS Prettify"></a>HTML-CSS-JS Prettify</h4><p>HTML, CSS, JavaScript, JSON, React/JSX and Vue code formatter for Sublime Text 2 and 3 via node.js</p>
-<h4 id="SublimeCodeIntel"><a href="#SublimeCodeIntel" class="headerlink" title="SublimeCodeIntel"></a>SublimeCodeIntel</h4><p>Full-featured code intelligence and smart autocomplete engine</p>
-<h4 id="SublimeREPL"><a href="#SublimeREPL" class="headerlink" title="SublimeREPL"></a>SublimeREPL</h4><p>SublimeREPL - run an interpreter inside ST2 (Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python + virtualenv, R, Ruby, Scala…)</p>
-<h4 id="Auto​File​Name"><a href="#Auto​File​Name" class="headerlink" title="Auto​File​Name"></a>Auto​File​Name</h4><p>Sublime Text plugin that autocompletes filenames</p>
-<h4 id="Compare-Side-By-Side"><a href="#Compare-Side-By-Side" class="headerlink" title="Compare Side-By-Side"></a>Compare Side-By-Side</h4><p>This package adds a simple side-by-side comparison tool to Sublime Text 2 and 3.</p>
-<h4 id="Material-Theme"><a href="#Material-Theme" class="headerlink" title="Material Theme"></a>Material Theme</h4><p>Material Theme, the most epic theme for Sublime Text 3 by Mattia Astorino</p>
-<h4 id="SublimeLinter"><a href="#SublimeLinter" class="headerlink" title="SublimeLinter"></a>SublimeLinter</h4><h4 id="SublimeLinter-php"><a href="#SublimeLinter-php" class="headerlink" title="SublimeLinter-php"></a>SublimeLinter-php</h4><p>This linter plugin for SublimeLinter provides an interface to php -l. It will be used with files that have the “PHP”, “HTML”, or “HTML 5” syntax.</p>
-<h4 id="ConvertToUTF8"><a href="#ConvertToUTF8" class="headerlink" title="ConvertToUTF8"></a>ConvertToUTF8</h4><p>A Sublime Text 2 &amp; 3 plugin for editing and saving files encoded in GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS, etc.</p>
-<h4 id="Laravel-5-Artisan"><a href="#Laravel-5-Artisan" class="headerlink" title="Laravel 5 Artisan"></a>Laravel 5 Artisan</h4><p>Laravel 5 Artisan Commands for Sublime Text 3</p>
-<h4 id="SideBarEnhancements"><a href="#SideBarEnhancements" class="headerlink" title="SideBarEnhancements"></a>SideBarEnhancements</h4><p>Enhancements to Sublime Text sidebar. Files and folders.</p>
-<h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Plugin for some git integration into sublime text</p>
-<h4 id="GitGutter"><a href="#GitGutter" class="headerlink" title="GitGutter"></a>GitGutter</h4><p>A Sublime Text 2/3 plugin to see git diff in gutter</p>
-<hr>
-<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"font_size"</span>: <span class="number">13</span>,</div><div class="line">	<span class="attr">"ignored_packages"</span>:</div><div class="line">	[</div><div class="line">		<span class="string">"Vintage"</span></div><div class="line">	],</div><div class="line">    <span class="attr">"save_on_focus_lost"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="attr">"theme"</span>: <span class="string">"Default.sublime-theme"</span>,</div><div class="line">	<span class="attr">"word_wrap"</span>: <span class="literal">true</span>,</div><div class="line">    </div><div class="line">    <span class="attr">"font_options"</span>:[<span class="string">"gray_antialias"</span>, <span class="string">"subpixel_antialias"</span>],</div><div class="line">    <span class="attr">"always_show_minimap_viewport"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"bold_folder_labels"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"indent_guide_options"</span>:</div><div class="line">    [</div><div class="line">        <span class="string">"draw_normal"</span>,</div><div class="line">        <span class="string">"draw_active"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"line_padding_bottom"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"line_padding_top"</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">"overlay_scroll_bars"</span>: <span class="string">"启用"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Key-Bingdings"><a href="#Key-Bingdings" class="headerlink" title="Key Bingdings"></a>Key Bingdings</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">	//格式化代码,single_line参数删除时，格式化只影响当前光标所在行</div><div class="line">	&#123;<span class="attr">"keys"</span>: [<span class="string">"ctrl+alt+l"</span>], <span class="attr">"command"</span>: <span class="string">"reindent"</span> ,<span class="attr">"args"</span>: &#123;<span class="attr">"single_line"</span>: <span class="literal">false</span>&#125;&#125;,</div><div class="line">	//emmet</div><div class="line">	&#123;</div><div class="line">    <span class="attr">"keys"</span>: [<span class="string">"tab"</span>],</div><div class="line">    <span class="attr">"command"</span>: <span class="string">"expand_abbreviation_by_tab"</span>,</div><div class="line"></div><div class="line">    // put comma-separated syntax selectors for which </div><div class="line">    // you want to expandEmmet abbreviations into "operand" key </div><div class="line">    // instead of SCOPE_SELECTOR.</div><div class="line">    // Examples: source.js, text.html - source</div><div class="line">    "context": [&#123;</div><div class="line">            "operand": "source.js",</div><div class="line">            "operator": "equal",</div><div class="line">            "match_all": true,</div><div class="line">            "key": "selector"</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // run only if there's no selected text</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"selection_empty"</span></div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // don't work if there are active tabstops</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</div><div class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"has_next_field"</span></div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // don't work if completion popup is visible and you</div><div class="line">        // want to insert completion with Tab. If you want to</div><div class="line">        // expand Emmet with Tab even if popup is visible -- </div><div class="line">        // remove this section</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"auto_complete_visible"</span></div><div class="line">        &#125;, &#123;</div><div class="line">            "match_all": true,</div><div class="line">            "key": "is_abbreviation"</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">	&#125;,</div><div class="line">    //sublimerepl</div><div class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"f5"</span>], <span class="attr">"caption"</span>: <span class="string">"SublimeREPL:Python"</span>, </div><div class="line">                      <span class="attr">"command"</span>: <span class="string">"run_existing_window_command"</span>, <span class="attr">"args"</span>:</div><div class="line">                      &#123;</div><div class="line">                           <span class="attr">"id"</span>: <span class="string">"repl_python_run"</span>,</div><div class="line">                           <span class="attr">"file"</span>: <span class="string">"config/Python/Main.sublime-menu"</span></div><div class="line">                      &#125; </div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-      
+
     
-    </div>
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://zhon9.github.io/2018/11/06/sublime/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lv 2">
+      <meta itemprop="description" content="知易行难">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lv 2">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">sublime note
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-06 14:18:12" itemprop="dateCreated datePublished" datetime="2018-11-06T14:18:12+08:00">2018-11-06</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-23 09:39:02" itemprop="dateModified" datetime="2020-04-23T09:39:02+08:00">2020-04-23</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
     
-      <div class="post-tags syuanpi fadeInRightShort back-3">
-      
-        <a href="/tags/sublime/">sublime</a>
-      
-      </div>
     
     
-      
+    <div class="post-body" itemprop="articleBody">
 
       
-  <hr class="copy-line">
-  <div class="post-copyright">
-    <div class="copy-author">
-      <span>Author :</span>
-      <span>Lv 2</span>
+        <h3 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h3><ol>
+<li>搜索文件：ctrl+p 输入文件名</li>
+<li>搜索函数/方法：ctrl+p 输入<code>“文件名@方法名”</code> 如 User@show</li>
+<li>跳转到指定行：ctrl+p 输入<code>文件名:行号</code>,只输入: 时在当前文件跳转</li>
+<li>查找当前文件方法：ctrl+r</li>
+<li>返回/前进编辑位置：Alt + -、Alt + Shift + -</li>
+<li>切换标签页：Ctrl + PgUp、Ctrl + PgDn</li>
+<li>选中单词：Ctrl + D 连续按会选中页面中所有单词，以实现批量编辑</li>
+<li>以单词为单位快速移动光标：Ctrl + ←、Ctrl + →</li>
+<li>选中当前行：Ctrl + L</li>
+<li>跳转到第几行：Ctrl+G</li>
+<li>跳转到对应括号：Ctrl+M</li>
+<li>开关侧栏：Ctrl+K+B</li>
+<li>选中当前括号内容，重复可选着括号本身：Ctrl+Shift+M</li>
+<li>注释当前html标签块：Ctrl+Shift+/</li>
+<li>专注编写模式：Shift+F11</li>
+<li>分屏显示：Alt+Shift+数字</li>
+<li>Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。</li>
+<li>Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。</li>
+<li>Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。</li>
+<li>Ctrl+Shift+] 选中代码，按下快捷键，展开代码。</li>
+</ol>
+<hr>
+<h3 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h3><ul>
+<li><p>Package Control<br>A full-featured package manager</p>
+</li>
+<li><p>A File Icon<br>Sublime Text File-Specific Icons for Improved Visual Grepping</p>
+</li>
+<li>Material Theme<br>Material Theme, the most epic theme for Sublime Text 3 by Mattia Astorino<br>-Package​Resource​Viewer<br>Sublime Text plugin to view package resources.</li>
+<li>Compare Side-By-Side<br>This package adds a simple side-by-side comparison tool to Sublime Text 2 and 3.</li>
+<li>Git<br>Plugin for some git integration into sublime text</li>
+<li><p>GitGutter<br>A Sublime Text 2/3 plugin to see git diff in gutter</p>
+</li>
+<li><p>BracketHighlighter<br>Bracket and tag highlighter for Sublime Text</p>
+</li>
+<li>Emmet<br>Emmet for Sublime Text</li>
+<li><p>HTML-CSS-JS Prettify<br>HTML, CSS, JavaScript, JSON, React/JSX and Vue code formatter for Sublime Text 2 and 3 via node.js</p>
+</li>
+<li><p>SublimeLinter</p>
+</li>
+<li>SublimeLinter-php<br>This linter plugin for SublimeLinter provides an interface to php -l. It will be used with files that have the “PHP”, “HTML”, or “HTML 5” syntax.</li>
+<li><p>phpfmt<br>This is a stable snapshot (version 6125cf9) of the phpfmt plugin for Sublime Text</p>
+</li>
+<li><p>SublimeCodeIntel<br>Full-featured code intelligence and smart autocomplete engine</p>
+</li>
+<li>SublimeREPL<br>SublimeREPL - run an interpreter inside ST2 (Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python + virtualenv, R, Ruby, Scala…)</li>
+<li>ConvertToUTF8<br>A Sublime Text 2 &amp; 3 plugin for editing and saving files encoded in GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS, etc.</li>
+<li>Laravel 5 Artisan<br>Laravel 5 Artisan Commands for Sublime Text 3</li>
+<li>Babel<br>Syntax definitions for ES6 JavaScript with React JSX extensions.</li>
+<li>Auto​File​Name<br>Sublime Text plugin that autocompletes filenames</li>
+</ul>
+<hr>
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"font_size"</span>: <span class="number">13</span>,</div><div class="line">	<span class="attr">"ignored_packages"</span>:</div><div class="line">	[</div><div class="line">		<span class="string">"Vintage"</span></div><div class="line">	],</div><div class="line">    <span class="attr">"save_on_focus_lost"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="attr">"theme"</span>: <span class="string">"Default.sublime-theme"</span>,</div><div class="line">	<span class="attr">"word_wrap"</span>: <span class="literal">true</span>,</div><div class="line">    </div><div class="line">    // material theme</div><div class="line">    "font_options":["gray_antialias", "subpixel_antialias"],</div><div class="line">    "always_show_minimap_viewport": true,</div><div class="line">    "bold_folder_labels": true,</div><div class="line">    "indent_guide_options":</div><div class="line">    [</div><div class="line">        <span class="string">"draw_normal"</span>,</div><div class="line">        <span class="string">"draw_active"</span></div><div class="line">    ],</div><div class="line">    "line_padding_bottom": 3,</div><div class="line">    "line_padding_top": 3,</div><div class="line">    "material_theme_accent_red": true,</div><div class="line">    "material_theme_big_fileicons": true,</div><div class="line">    "material_theme_disable_folder_animation": true,</div><div class="line">    "material_theme_disable_tree_indicator": true,</div><div class="line">    "overlay_scroll_bars": "enabled",</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Key-Bingdings"><a href="#Key-Bingdings" class="headerlink" title="Key Bingdings"></a>Key Bingdings</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">	//格式化代码,single_line参数删除时，格式化只影响当前光标所在行</div><div class="line">	&#123;<span class="attr">"keys"</span>: [<span class="string">"ctrl+alt+l"</span>], <span class="attr">"command"</span>: <span class="string">"reindent"</span> ,<span class="attr">"args"</span>: &#123;<span class="attr">"single_line"</span>: <span class="literal">false</span>&#125;&#125;,</div><div class="line">    </div><div class="line">	//emmet</div><div class="line">	&#123;</div><div class="line">    <span class="attr">"keys"</span>: [<span class="string">"tab"</span>],</div><div class="line">    <span class="attr">"command"</span>: <span class="string">"expand_abbreviation_by_tab"</span>,</div><div class="line"></div><div class="line">    // put comma-separated syntax selectors for which </div><div class="line">    // you want to expandEmmet abbreviations into "operand" key </div><div class="line">    // instead of SCOPE_SELECTOR.</div><div class="line">    // Examples: source.js, text.html - source</div><div class="line">    "context": [&#123;</div><div class="line">            "operand": "source.js",</div><div class="line">            "operator": "equal",</div><div class="line">            "match_all": true,</div><div class="line">            "key": "selector"</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // run only if there's no selected text</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"selection_empty"</span></div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // don't work if there are active tabstops</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</div><div class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"has_next_field"</span></div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // don't work if completion popup is visible and you</div><div class="line">        // want to insert completion with Tab. If you want to</div><div class="line">        // expand Emmet with Tab even if popup is visible -- </div><div class="line">        // remove this section</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"auto_complete_visible"</span></div><div class="line">        &#125;, &#123;</div><div class="line">            "match_all": true,</div><div class="line">            "key": "is_abbreviation"</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">	&#125;,</div><div class="line"></div><div class="line">    //sublimerepl</div><div class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"f5"</span>], <span class="attr">"caption"</span>: <span class="string">"SublimeREPL:Python"</span>, </div><div class="line">                      <span class="attr">"command"</span>: <span class="string">"run_existing_window_command"</span>, <span class="attr">"args"</span>:</div><div class="line">                      &#123;</div><div class="line">                           <span class="attr">"id"</span>: <span class="string">"repl_python_run"</span>,</div><div class="line">                           <span class="attr">"file"</span>: <span class="string">"config/Python/Main.sublime-menu"</span></div><div class="line">                      &#125; </div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
     </div>
-    <div class="copy-url">
-      <span>Url :</span>
-      <a href="https://zhon9.github.io/2018/11/06/sublime/">https://zhon9.github.io/2018/11/06/sublime/</a>
-    </div>
-    <div class="copy-origin">
-      <span>Origin :</span>
-      <a href="https://zhon9.github.io">https://zhon9.github.io</a>
-    </div>
-    <div class="copy-license">
+
+    
+    
+    
+        
       
-      著作权归作者所有，转载请联系作者获得授权。
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/sublime/" rel="tag"># sublime</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/04/27/phpcms/" rel="next" title="phpcms">
+                  <i class="fa fa-chevron-left"></i> phpcms
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/29/english/" rel="prev" title="english">
+                  english <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shortcut"><span class="nav-number">1.</span> <span class="nav-text">Shortcut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plugins"><span class="nav-number">2.</span> <span class="nav-text">Plugins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting"><span class="nav-number">3.</span> <span class="nav-text">Setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-Bingdings"><span class="nav-number">4.</span> <span class="nav-text">Key Bingdings</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/uploads/avatar.jpg"
+      alt="Lv 2">
+  <p class="site-author-name" itemprop="name">Lv 2</p>
+  <div class="site-description" itemprop="description">知易行难</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
     
-  </article>
-  
-    
-  <nav class="article-page">
-    
-      <a href="/2019/08/29/english/" id="art-left" class="art-left">
-        <span class="next-title">
-          <i class="iconfont icon-left"></i>english
-        </span>
-      </a>
-    
-    
-      <a href="/2018/04/27/phpcms/" id="art-right" class="art-right">
-        <span class="prev-title">
-          phpcms<i class="iconfont icon-right"></i>
-        </span>
-      </a>
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
     
   </nav>
 
 
-    
-  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
-  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
-    
 
-    
-    
+      </div>
 
-    
-
-  </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
+      </div>
+    </main>
 
-  
-  
-
-
-        </div>
-      </main>
-      <footer class="footer syuanpi fadeIn" id="footer">
-  <hr>
-  <div class="footer-wrapper">
-    <div class="left">
-      <div class="contact-icon">
-  
-  
-    <a href="https://github.com/https://github.com/zhon9" class="iconfont icon-github" title="github"></a>
-  
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lv 2</span>
 </div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.3.8</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.0</div>
 
-    </div>
-    <div class="right">
-      <div class="copyright">
-    <div class="info">
-        <span>&copy;</span>
-        <span>2016 ~ 2019</span>
-        <span>❤</span>
-        <span>Lv 2</span>
-    </div>
-    <div class="theme">
-        <span>
-            Powered by
-            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
-        </span>
-        <span>
-            Theme
-            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
-        </span>
-    </div>
-    
-</div>
+        
 
-    </div>
-  </div>
-</footer>
-    </div>
-    <div class="tagcloud" id="tagcloud">
-  <div class="tagcloud-taglist">
-  
-    <div class="tagcloud-tag">
-      <button>tool</button>
-    </div>
-  
-    <div class="tagcloud-tag">
-      <button>dedecms</button>
-    </div>
-  
-    <div class="tagcloud-tag">
-      <button>phpcms</button>
-    </div>
-  
-    <div class="tagcloud-tag">
-      <button>sublime</button>
-    </div>
-  
-  </div>
-  
-    <div class="tagcloud-postlist active">
-      <h2>tool</h2>
-      
-        <div class="tagcloud-post">
-          <a href="/2017/02/28/ab/">
-            <time class="tagcloud-posttime">2017 / 02 / 28</time>
-            <span>windows使用ApacheBench（ab）做网站压力测试</span>
-          </a>
-        </div>
-      
-        <div class="tagcloud-post">
-          <a href="/2017/03/11/xhprof/">
-            <time class="tagcloud-posttime">2017 / 03 / 11</time>
-            <span>XHProf windows 安装</span>
-          </a>
-        </div>
-      
-    </div>
-  
-    <div class="tagcloud-postlist ">
-      <h2>dedecms</h2>
-      
-        <div class="tagcloud-post">
-          <a href="/2017/08/08/dedecms/">
-            <time class="tagcloud-posttime">2017 / 08 / 08</time>
-            <span>dedecms</span>
-          </a>
-        </div>
-      
-    </div>
-  
-    <div class="tagcloud-postlist ">
-      <h2>phpcms</h2>
-      
-        <div class="tagcloud-post">
-          <a href="/2018/04/27/phpcms/">
-            <time class="tagcloud-posttime">2018 / 04 / 27</time>
-            <span>phpcms</span>
-          </a>
-        </div>
-      
-    </div>
-  
-    <div class="tagcloud-postlist ">
-      <h2>sublime</h2>
-      
-        <div class="tagcloud-post">
-          <a href="/2018/11/06/sublime/">
-            <time class="tagcloud-posttime">2018 / 11 / 06</time>
-            <span>sublime plugins</span>
-          </a>
-        </div>
-      
-    </div>
-  
-</div>
 
-  </div>
-  <div class="backtop syuanpi melt toTop" id="backtop">
-    <i class="iconfont icon-up"></i>
-    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
-</div>
 
-  <div class="search" id="search">
-    <div class="input">
-      <input type="text" id="search-input" placeholder="搜索一下？" autofocus>
-    </div>
-    <div id="search-result"></div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
   </div>
 
-
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
-
-
-  <script></script>
-  <script src="/script/lib/lightbox/js/lightbox.min.js" async></script>
+  
 
 
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
 
-
-
-
+<script src="/js/next-boot.js?v=7.4.0"></script>
 
 
 
-  <script src="/script/scheme/balance.js"></script>
+  
 
 
-<script src="/script/bootstarp.js"></script>
 
 
-<script>
-if (nlviconfig.theme.toc) {
-  setTimeout(function() {
-    if (nlviconfig.theme.scheme === 'balance') {
-      $("#header").addClass("show_toc");
-    } else if (nlviconfig.theme.scheme === 'banderole') {
-      $(".container-inner").addClass("has_toc");
-      $(".post-toc .title").addClass("show");
-      $(".toc-inner").addClass("show");
-    }
-  }, 1000);
-}
-</script>
 
 
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
 
 </body>
 </html>
