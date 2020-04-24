@@ -6,7 +6,7 @@ tags: [phpcms,php]
 常用标签，使用记录
 <!-- more -->
 
-``` php
+```html
 // 调用一个栏目链接
 {$CATEGORYS[1][url]}
 

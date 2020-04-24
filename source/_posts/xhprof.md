@@ -15,7 +15,7 @@ XHProf 扩展、[XHProf 调试输出页面](http://pecl.php.net/package/xhprof)�
 
 在文件末尾加
 
-``` bash
+```bash
 [xhprof]
 extension=php_xhprof.dll
 xhprof.output_dir="E:\phpStudy\WWW\xhprof\xhprof_log"	//日志输出目录
@@ -27,7 +27,7 @@ xhprof.output_dir="E:\phpStudy\WWW\xhprof\xhprof_log"	//日志输出目录
 
 ## 调试代码
 
-``` bash
+```php
 xhprof_enable();
 //xhprof_enable(XHPROF_FLAGS_CPU+XHPROF_FLAGS_MEMORY);
 //加上这个参数可以使得xhprof显示cpu和内存相关的数据。
@@ -50,7 +50,7 @@ var_dump($run_id);    //输出日志的id
 
 在xhprof调试输出目录，找到 xhprof_generate_image_by_dot 函数
 
-``` bash
+```php
 $descriptorspec = array(
        // stdin is a pipe that the child will read from
        0 => array("pipe", "r"),
@@ -58,7 +58,7 @@ $descriptorspec = array(
        1 => array("pipe", "w"),
        // stderr is a pipe that the child will write to
        2 => array("pipe", "w")
-       );
+);
 $cmd = "dot -T".$type;
 $process = proc_open($cmd, $descriptorspec, $pipes, "/tmp", array());
 ```

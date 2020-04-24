@@ -6,7 +6,7 @@ tags: [dedecms]
 常用标签，使用记录
 <!-- more -->
 
-``` bash
+```c
 // 站点更目录
 {dede:global.cfg_basehost/}
 
@@ -41,7 +41,7 @@ dede_archives
 {dede:field name='position'/}
 
 // 文章发表日期
-{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)
+{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"}
 
 // 循环外部链接栏目
 5.7可以找include/taglib/channelartlist.lib.php第67行左右

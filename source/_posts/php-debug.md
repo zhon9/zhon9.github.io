@@ -8,7 +8,7 @@ tags: [tool,php,windows]
 1. 执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。
 
 2. 在php.ini文件中加入一行:
-```
+```c
 auto_prepend_file = ${HOME}/.config/composer/vendor/autoload.php
 //auto_prepend_file可以简单地理解成：执行所有的php代码之前先include你指定的文件
 ```
@@ -21,7 +21,7 @@ auto_prepend_file = ${HOME}/.config/composer/vendor/autoload.php
 2. 放到php安装目录的ext下
 
 3. 配置php.ini
-```
+```c
 extension="扩展的绝对路径"
 //代码跟踪日志文件位置,注意要先新建这个traces目录，并设置777
 xdebug.trace_output_dir = /tmp/traces
@@ -39,7 +39,7 @@ xdebug.show_mem_delta = On
 xdebug.var_display_max_depth = 2
 ```
 
-```
+```php
 xdebug_start_trace();
 /* 业务代码     */
 xdebug_stop_trace();
