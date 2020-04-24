@@ -330,8 +330,180 @@
 <li>Auto​File​Name<br>Sublime Text plugin that autocompletes filenames</li>
 </ul>
 <hr>
-<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"font_size"</span>: <span class="number">13</span>,</div><div class="line">	<span class="attr">"ignored_packages"</span>:</div><div class="line">	[</div><div class="line">		<span class="string">"Vintage"</span></div><div class="line">	],</div><div class="line">    <span class="attr">"save_on_focus_lost"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="attr">"theme"</span>: <span class="string">"Default.sublime-theme"</span>,</div><div class="line">	<span class="attr">"word_wrap"</span>: <span class="literal">true</span>,</div><div class="line">    </div><div class="line">    // material theme</div><div class="line">    "font_options":["gray_antialias", "subpixel_antialias"],</div><div class="line">    "always_show_minimap_viewport": true,</div><div class="line">    "bold_folder_labels": true,</div><div class="line">    "indent_guide_options":</div><div class="line">    [</div><div class="line">        <span class="string">"draw_normal"</span>,</div><div class="line">        <span class="string">"draw_active"</span></div><div class="line">    ],</div><div class="line">    "line_padding_bottom": 3,</div><div class="line">    "line_padding_top": 3,</div><div class="line">    "material_theme_accent_red": true,</div><div class="line">    "material_theme_big_fileicons": true,</div><div class="line">    "material_theme_disable_folder_animation": true,</div><div class="line">    "material_theme_disable_tree_indicator": true,</div><div class="line">    "overlay_scroll_bars": "enabled",</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Key-Bingdings"><a href="#Key-Bingdings" class="headerlink" title="Key Bingdings"></a>Key Bingdings</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">	//格式化代码,single_line参数删除时，格式化只影响当前光标所在行</div><div class="line">	&#123;<span class="attr">"keys"</span>: [<span class="string">"ctrl+alt+l"</span>], <span class="attr">"command"</span>: <span class="string">"reindent"</span> ,<span class="attr">"args"</span>: &#123;<span class="attr">"single_line"</span>: <span class="literal">false</span>&#125;&#125;,</div><div class="line">    </div><div class="line">	//emmet</div><div class="line">	&#123;</div><div class="line">    <span class="attr">"keys"</span>: [<span class="string">"tab"</span>],</div><div class="line">    <span class="attr">"command"</span>: <span class="string">"expand_abbreviation_by_tab"</span>,</div><div class="line"></div><div class="line">    // put comma-separated syntax selectors for which </div><div class="line">    // you want to expandEmmet abbreviations into "operand" key </div><div class="line">    // instead of SCOPE_SELECTOR.</div><div class="line">    // Examples: source.js, text.html - source</div><div class="line">    "context": [&#123;</div><div class="line">            "operand": "source.js",</div><div class="line">            "operator": "equal",</div><div class="line">            "match_all": true,</div><div class="line">            "key": "selector"</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // run only if there's no selected text</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"selection_empty"</span></div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // don't work if there are active tabstops</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</div><div class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"has_next_field"</span></div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        // don't work if completion popup is visible and you</div><div class="line">        // want to insert completion with Tab. If you want to</div><div class="line">        // expand Emmet with Tab even if popup is visible -- </div><div class="line">        // remove this section</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</div><div class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">"key"</span>: <span class="string">"auto_complete_visible"</span></div><div class="line">        &#125;, &#123;</div><div class="line">            "match_all": true,</div><div class="line">            "key": "is_abbreviation"</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">	&#125;,</div><div class="line"></div><div class="line">    //sublimerepl</div><div class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"f5"</span>], <span class="attr">"caption"</span>: <span class="string">"SublimeREPL:Python"</span>, </div><div class="line">                      <span class="attr">"command"</span>: <span class="string">"run_existing_window_command"</span>, <span class="attr">"args"</span>:</div><div class="line">                      &#123;</div><div class="line">                           <span class="attr">"id"</span>: <span class="string">"repl_python_run"</span>,</div><div class="line">                           <span class="attr">"file"</span>: <span class="string">"config/Python/Main.sublime-menu"</span></div><div class="line">                      &#125; </div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+<span class="line">25</span>
+<span class="line">26</span>
+<span class="line">27</span>
+</pre></td><td class="code"><pre><span class="line">&#123;</span>
+<span class="line">	<span class="attr">"font_size"</span>: <span class="number">13</span>,</span>
+<span class="line">	<span class="attr">"ignored_packages"</span>:</span>
+<span class="line">	[</span>
+<span class="line">		<span class="string">"Vintage"</span></span>
+<span class="line">	],</span>
+<span class="line">    <span class="attr">"save_on_focus_lost"</span>: <span class="literal">true</span>,</span>
+<span class="line">	<span class="attr">"theme"</span>: <span class="string">"Default.sublime-theme"</span>,</span>
+<span class="line">	<span class="attr">"word_wrap"</span>: <span class="literal">true</span>,</span>
+<span class="line">    </span>
+<span class="line">    // material theme</span>
+<span class="line">    "font_options":["gray_antialias", "subpixel_antialias"],</span>
+<span class="line">    "always_show_minimap_viewport": true,</span>
+<span class="line">    "bold_folder_labels": true,</span>
+<span class="line">    "indent_guide_options":</span>
+<span class="line">    [</span>
+<span class="line">        <span class="string">"draw_normal"</span>,</span>
+<span class="line">        <span class="string">"draw_active"</span></span>
+<span class="line">    ],</span>
+<span class="line">    "line_padding_bottom": 3,</span>
+<span class="line">    "line_padding_top": 3,</span>
+<span class="line">    "material_theme_accent_red": true,</span>
+<span class="line">    "material_theme_big_fileicons": true,</span>
+<span class="line">    "material_theme_disable_folder_animation": true,</span>
+<span class="line">    "material_theme_disable_tree_indicator": true,</span>
+<span class="line">    "overlay_scroll_bars": "enabled",</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="Key-Bingdings"><a href="#Key-Bingdings" class="headerlink" title="Key Bingdings"></a>Key Bingdings</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+<span class="line">25</span>
+<span class="line">26</span>
+<span class="line">27</span>
+<span class="line">28</span>
+<span class="line">29</span>
+<span class="line">30</span>
+<span class="line">31</span>
+<span class="line">32</span>
+<span class="line">33</span>
+<span class="line">34</span>
+<span class="line">35</span>
+<span class="line">36</span>
+<span class="line">37</span>
+<span class="line">38</span>
+<span class="line">39</span>
+<span class="line">40</span>
+<span class="line">41</span>
+<span class="line">42</span>
+<span class="line">43</span>
+<span class="line">44</span>
+<span class="line">45</span>
+<span class="line">46</span>
+<span class="line">47</span>
+<span class="line">48</span>
+<span class="line">49</span>
+<span class="line">50</span>
+<span class="line">51</span>
+<span class="line">52</span>
+<span class="line">53</span>
+<span class="line">54</span>
+<span class="line">55</span>
+<span class="line">56</span>
+<span class="line">57</span>
+<span class="line">58</span>
+<span class="line">59</span>
+</pre></td><td class="code"><pre><span class="line">[</span>
+<span class="line">	//格式化代码,single_line参数删除时，格式化只影响当前光标所在行</span>
+<span class="line">	&#123;<span class="attr">"keys"</span>: [<span class="string">"ctrl+alt+l"</span>], <span class="attr">"command"</span>: <span class="string">"reindent"</span> ,<span class="attr">"args"</span>: &#123;<span class="attr">"single_line"</span>: <span class="literal">false</span>&#125;&#125;,</span>
+<span class="line">    </span>
+<span class="line">	//emmet</span>
+<span class="line">	&#123;</span>
+<span class="line">    <span class="attr">"keys"</span>: [<span class="string">"tab"</span>],</span>
+<span class="line">    <span class="attr">"command"</span>: <span class="string">"expand_abbreviation_by_tab"</span>,</span>
+<span class="line"></span>
+<span class="line">    // put comma-separated syntax selectors for which </span>
+<span class="line">    // you want to expandEmmet abbreviations into "operand" key </span>
+<span class="line">    // instead of SCOPE_SELECTOR.</span>
+<span class="line">    // Examples: source.js, text.html - source</span>
+<span class="line">    "context": [&#123;</span>
+<span class="line">            "operand": "source.js",</span>
+<span class="line">            "operator": "equal",</span>
+<span class="line">            "match_all": true,</span>
+<span class="line">            "key": "selector"</span>
+<span class="line">        &#125;,</span>
+<span class="line"></span>
+<span class="line">        // run only if there's no selected text</span>
+<span class="line">        &#123;</span>
+<span class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</span>
+<span class="line">            <span class="attr">"key"</span>: <span class="string">"selection_empty"</span></span>
+<span class="line">        &#125;,</span>
+<span class="line"></span>
+<span class="line">        // don't work if there are active tabstops</span>
+<span class="line">        &#123;</span>
+<span class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</span>
+<span class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</span>
+<span class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</span>
+<span class="line">            <span class="attr">"key"</span>: <span class="string">"has_next_field"</span></span>
+<span class="line">        &#125;,</span>
+<span class="line"></span>
+<span class="line">        // don't work if completion popup is visible and you</span>
+<span class="line">        // want to insert completion with Tab. If you want to</span>
+<span class="line">        // expand Emmet with Tab even if popup is visible -- </span>
+<span class="line">        // remove this section</span>
+<span class="line">        &#123;</span>
+<span class="line">            <span class="attr">"operand"</span>: <span class="literal">false</span>,</span>
+<span class="line">            <span class="attr">"operator"</span>: <span class="string">"equal"</span>,</span>
+<span class="line">            <span class="attr">"match_all"</span>: <span class="literal">true</span>,</span>
+<span class="line">            <span class="attr">"key"</span>: <span class="string">"auto_complete_visible"</span></span>
+<span class="line">        &#125;, &#123;</span>
+<span class="line">            "match_all": true,</span>
+<span class="line">            "key": "is_abbreviation"</span>
+<span class="line">        &#125;</span>
+<span class="line">    ]</span>
+<span class="line">	&#125;,</span>
+<span class="line"></span>
+<span class="line">    //sublimerepl</span>
+<span class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"f5"</span>], <span class="attr">"caption"</span>: <span class="string">"SublimeREPL:Python"</span>, </span>
+<span class="line">                      <span class="attr">"command"</span>: <span class="string">"run_existing_window_command"</span>, <span class="attr">"args"</span>:</span>
+<span class="line">                      &#123;</span>
+<span class="line">                           <span class="attr">"id"</span>: <span class="string">"repl_python_run"</span>,</span>
+<span class="line">                           <span class="attr">"file"</span>: <span class="string">"config/Python/Main.sublime-menu"</span></span>
+<span class="line">                      &#125; </span>
+<span class="line">    &#125;</span>
+<span class="line">]</span>
+</pre></td></tr></table></figure>
     </div>
 
     
@@ -435,7 +607,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -448,7 +620,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
