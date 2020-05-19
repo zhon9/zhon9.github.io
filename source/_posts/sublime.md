@@ -79,7 +79,7 @@ Sublime Text plugin that autocompletes filenames
 		"Vintage"
 	],
     "save_on_focus_lost": true,
-	"theme": "Default.sublime-theme",
+	"theme": "Material-Theme-Darker.sublime-theme",
 	"word_wrap": true,
     
     // material theme
