@@ -66,3 +66,24 @@ ping -n 2 127.1 >nul: 2>nul:
 goto :loop
 endlocal
 ```
+
+### youtube-dl.bat
+youtube-dl
+```bat
+@echo off
+:download
+set /p input=input video link:
+set input=%input:&=^^^&%
+youtube-dl --proxy socks5://127.0.0.1:10808 -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio --merge-output-format mp4 %input%
+goto :download
+```
+
+### 图片第一帧生成图片
+```bat
+ffmpeg -i a.mp4 -y -f image2 -frames 1 a.jpg
+```
+
+### pdf 转 epub
+```bat
+docker run -ti --rm -v /share:/temp dodeeric/pdf2epubex pdf2epubEX 1.pdf
+```
