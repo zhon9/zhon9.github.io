@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="ffmpeg1 2 3 4 5 6 # 视频第一帧生成图片 ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png # 视频第一秒生成图片 ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png # 视频分离音频 ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3  rename.bat1 ren *.下载 *.  re">
+<meta name="keywords" content="bat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="batch file">
+<meta property="og:url" content="https://zhon9.github.io/2019/09/10/bat/index.html">
+<meta property="og:site_name" content="Lv 2">
+<meta property="og:description" content="ffmpeg1 2 3 4 5 6 # 视频第一帧生成图片 ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png # 视频第一秒生成图片 ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png # 视频分离音频 ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3  rename.bat1 ren *.下载 *.  re">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-09-16T02:03:30.541Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="batch file">
+<meta name="twitter:description" content="ffmpeg1 2 3 4 5 6 # 视频第一帧生成图片 ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png # 视频第一秒生成图片 ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png # 视频分离音频 ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3  rename.bat1 ren *.下载 *.  re">
+  <link rel="canonical" href="https://zhon9.github.io/2019/09/10/bat/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>batch file | Lv 2</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lv 2</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://zhon9.github.io/2019/09/10/bat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lv 2">
+      <meta itemprop="description" content="知易行难">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lv 2">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">batch file
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-10 15:36:58" itemprop="dateCreated datePublished" datetime="2019-09-10T15:36:58+08:00">2019-09-10</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-16 10:03:30" itemprop="dateModified" datetime="2021-09-16T10:03:30+08:00">2021-09-16</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+</pre></td><td class="code"><pre><span class="line"># 视频第一帧生成图片</span>
+<span class="line">ffmpeg -i a.mp4 -y -f image2 -frames <span class="number">1</span> a.png</span>
+<span class="line"># 视频第一秒生成图片</span>
+<span class="line">ffmpeg -i a.mp4 -y -f image2 -ss <span class="number">1</span> a.png</span>
+<span class="line"># 视频分离音频</span>
+<span class="line">ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3</span>
+</pre></td></tr></table></figure>
+<h3 id="rename-bat"><a href="#rename-bat" class="headerlink" title="rename.bat"></a>rename.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line"><span class="built_in">ren</span> *.下载 *.</span>
+</pre></td></tr></table></figure>
+<h3 id="rename2-bat"><a href="#rename2-bat" class="headerlink" title="rename2.bat"></a>rename2.bat</h3><p>将当前目录的 aa (1).jpg 重命名 aa1.jpg<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+</pre></td><td class="code"><pre><span class="line">@<span class="built_in">Echo</span> Off&amp;<span class="built_in">SetLocal</span> ENABLEDELAYEDEXPANSION</span>
+<span class="line"><span class="keyword">FOR</span> <span class="variable">%%a</span> <span class="keyword">in</span> (*) <span class="keyword">do</span> (</span>
+<span class="line"><span class="built_in">echo</span> 正在处理 <span class="variable">%%a</span></span>
+<span class="line"><span class="built_in">set</span> "name=<span class="variable">%%a</span>"</span>
+<span class="line"><span class="built_in">set</span> "name=!name: (=!"</span>
+<span class="line"><span class="built_in">set</span> "name=<span class="variable">!name:)=!</span>"</span>
+<span class="line"><span class="built_in">ren</span> "<span class="variable">%%a</span>" "<span class="variable">!name!</span>"</span>
+<span class="line">)</span>
+</pre></td></tr></table></figure></p>
+<h3 id="heiping-bat"><a href="#heiping-bat" class="headerlink" title="heiping.bat"></a>heiping.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line"><span class="built_in">start</span> C:\Windows\System32\scrnsave.scr /s</span>
+</pre></td></tr></table></figure>
+<h3 id="tree-bat"><a href="#tree-bat" class="headerlink" title="tree.bat"></a>tree.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span> /o:-d 文件夹/b&gt;list.txt</span>
+</pre></td></tr></table></figure>
+<h3 id="youtube-dl-bat"><a href="#youtube-dl-bat" class="headerlink" title="youtube-dl.bat"></a>youtube-dl.bat</h3><p>youtube-dl<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+</pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span>
+<span class="line">:download</span>
+<span class="line"><span class="built_in">set</span> /p input=input video link:</span>
+<span class="line"><span class="built_in">set</span> input=<span class="variable">%input:&amp;=^^^&amp;%</span></span>
+<span class="line">youtube-dl --proxy socks5://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">10808</span> -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio --merge-output-<span class="built_in">format</span> mp4 <span class="variable">%input%</span></span>
+<span class="line"><span class="keyword">goto</span> :download</span>
+</pre></td></tr></table></figure></p>
+<h3 id="pdf-转-epub"><a href="#pdf-转-epub" class="headerlink" title="pdf 转 epub"></a>pdf 转 epub</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">docker run -ti --rm -v /share:/temp dodeeric/pdf2epubex pdf2epubEX <span class="number">1</span>.pdf</span>
+</pre></td></tr></table></figure>
+<h3 id="testping-bat"><a href="#testping-bat" class="headerlink" title="testping.bat"></a>testping.bat</h3><p>来网通知<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+</pre></td><td class="code"><pre><span class="line">@<span class="built_in">setlocal</span> enableextensions enabledelayedexpansion</span>
+<span class="line">@<span class="built_in">echo</span> off</span>
+<span class="line"><span class="built_in">set</span> ipaddr=www.baidu.com</span>
+<span class="line"><span class="built_in">set</span> oldstate=neither</span>
+<span class="line">:loop</span>
+<span class="line"><span class="built_in">ping</span> -n <span class="number">1</span> <span class="variable">!ipaddr!</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span>
+<span class="line"><span class="keyword">if</span> <span class="variable">!errorlevel!</span>==<span class="number">0</span> <span class="built_in">start</span> wmplayer e:\system.wav</span>
+<span class="line">timeout <span class="number">2</span></span>
+<span class="line"><span class="keyword">goto</span> :loop</span>
+<span class="line"><span class="built_in">endlocal</span></span>
+</pre></td></tr></table></figure></p>
+<h3 id="testping2-bat"><a href="#testping2-bat" class="headerlink" title="testping2.bat"></a>testping2.bat</h3><p>网络状态改变通知<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+</pre></td><td class="code"><pre><span class="line">@<span class="built_in">setlocal</span> enableextensions enabledelayedexpansion</span>
+<span class="line">@<span class="built_in">echo</span> off</span>
+<span class="line"><span class="built_in">set</span> ipaddr=www.baidu.com</span>
+<span class="line"><span class="built_in">set</span> oldstate=neither</span>
+<span class="line">:loop</span>
+<span class="line"><span class="built_in">set</span> state=up</span>
+<span class="line"><span class="built_in">ping</span> -n <span class="number">1</span> <span class="variable">!ipaddr!</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span>
+<span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">!errorlevel!</span>==<span class="number">0</span> <span class="built_in">set</span> state=down</span>
+<span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">!state!</span>==<span class="variable">!oldstate!</span> (</span>
+<span class="line">    <span class="built_in">echo</span>.Link is <span class="variable">!state!</span></span>
+<span class="line">    <span class="built_in">start</span> wmplayer e:\system.wav</span>
+<span class="line">    <span class="built_in">set</span> oldstate=<span class="variable">!state!</span></span>
+<span class="line">)</span>
+<span class="line"><span class="built_in">ping</span> -n <span class="number">2</span> <span class="number">127</span>.<span class="number">1</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span>
+<span class="line"><span class="keyword">goto</span> :loop</span>
+<span class="line"><span class="built_in">endlocal</span></span>
+</pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/bat/" rel="tag"># bat</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/10/mysql-note/" rel="next" title="mysql note">
+                  <i class="fa fa-chevron-left"></i> mysql note
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/09/php-debug/" rel="prev" title="php debug">
+                  php debug <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ffmpeg"><span class="nav-number">1.</span> <span class="nav-text">ffmpeg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rename-bat"><span class="nav-number">2.</span> <span class="nav-text">rename.bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rename2-bat"><span class="nav-number">3.</span> <span class="nav-text">rename2.bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#heiping-bat"><span class="nav-number">4.</span> <span class="nav-text">heiping.bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tree-bat"><span class="nav-number">5.</span> <span class="nav-text">tree.bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#youtube-dl-bat"><span class="nav-number">6.</span> <span class="nav-text">youtube-dl.bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pdf-转-epub"><span class="nav-number">7.</span> <span class="nav-text">pdf 转 epub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#testping-bat"><span class="nav-number">8.</span> <span class="nav-text">testping.bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#testping2-bat"><span class="nav-number">9.</span> <span class="nav-text">testping2.bat</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/uploads/avatar.jpg"
+      alt="Lv 2">
+  <p class="site-author-name" itemprop="name">Lv 2</p>
+  <div class="site-description" itemprop="description">知易行难</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lv 2</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
