@@ -279,69 +279,17 @@
 
       
         <p>XHProf 是一个分层PHP性能分析工具，可以看到php程序各个函数的执行次数和执行时间等数据，帮助优化php程序。<br><a id="more"></a></p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>XHProf 扩展、<a href="http://pecl.php.net/package/xhprof" target="_blank" rel="external">XHProf 调试输出页面</a>、<a href="http://www.graphviz.org/Download_windows.php" target="_blank" rel="external">Graphviz(非必须)</a></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>XHProf 扩展、<a href="http://pecl.php.net/package/xhprof" target="_blank" rel="noopener">XHProf 调试输出页面</a>、<a href="http://www.graphviz.org/Download_windows.php" target="_blank" rel="noopener">Graphviz(非必须)</a></p>
 <h3 id="XHProf-扩展放到-php的ext目录-下面"><a href="#XHProf-扩展放到-php的ext目录-下面" class="headerlink" title="XHProf 扩展放到 php的ext目录 下面"></a>XHProf 扩展放到 php的ext目录 下面</h3><h3 id="XHProf-调试输出页面放到-服务器根目录"><a href="#XHProf-调试输出页面放到-服务器根目录" class="headerlink" title="XHProf 调试输出页面放到 服务器根目录"></a>XHProf 调试输出页面放到 服务器根目录</h3><h3 id="配置-php-ini-，然后重启Apache"><a href="#配置-php-ini-，然后重启Apache" class="headerlink" title="配置 php.ini ，然后重启Apache"></a>配置 php.ini ，然后重启Apache</h3><p>在文件末尾加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">[xhprof]</span>
-<span class="line">extension=php_xhprof.dll</span>
-<span class="line">xhprof.output_dir=<span class="string">"E:\phpStudy\WWW\xhprof\xhprof_log"</span>	//日志输出目录</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[xhprof]</span><br><span class="line">extension=php_xhprof.dll</span><br><span class="line">xhprof.output_dir=<span class="string">"E:\phpStudy\WWW\xhprof\xhprof_log"</span>	//日志输出目录</span><br></pre></td></tr></table></figure>
 <h2 id="安装-Graphviz"><a href="#安装-Graphviz" class="headerlink" title="安装 Graphviz"></a>安装 Graphviz</h2><p>目录不要带中文或者中文字符</p>
-<h2 id="调试代码"><a href="#调试代码" class="headerlink" title="调试代码"></a>调试代码</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-</pre></td><td class="code"><pre><span class="line">xhprof_enable();</span>
-<span class="line"><span class="comment">//xhprof_enable(XHPROF_FLAGS_CPU+XHPROF_FLAGS_MEMORY);</span></span>
-<span class="line"><span class="comment">//加上这个参数可以使得xhprof显示cpu和内存相关的数据。</span></span>
-<span class="line"></span>
-<span class="line">...		<span class="comment">//很多代码</span></span>
-<span class="line"></span>
-<span class="line">$data = xhprof_disable();</span>
-<span class="line"><span class="keyword">include_once</span> <span class="string">"E:\phpStudy\WWW\xhprof\xhprof-0.9.4\xhprof_lib\utils\xhprof_lib.php"</span>;</span>
-<span class="line"><span class="keyword">include_once</span> <span class="string">"E:\phpStudy\WWW\xhprof\xhprof-0.9.4\xhprof_lib\utils\xhprof_runs.php"</span>;</span>
-<span class="line">$objXhprofRun = <span class="keyword">new</span> XHProfRuns_Default();</span>
-<span class="line">$run_id = $objXhprofRun-&gt;save_run($data, <span class="string">"xhprof"</span>);</span>
-<span class="line">var_dump($run_id);    <span class="comment">//输出日志的id</span></span>
-<span class="line"><span class="comment">//访问 http://localhost/xhprof/xhprof-0.9.4/xhprof_html/</span></span>
-</pre></td></tr></table></figure>
+<h2 id="调试代码"><a href="#调试代码" class="headerlink" title="调试代码"></a>调试代码</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">xhprof_enable();</span><br><span class="line"><span class="comment">//xhprof_enable(XHPROF_FLAGS_CPU+XHPROF_FLAGS_MEMORY);</span></span><br><span class="line"><span class="comment">//加上这个参数可以使得xhprof显示cpu和内存相关的数据。</span></span><br><span class="line"></span><br><span class="line">...		<span class="comment">//很多代码</span></span><br><span class="line"></span><br><span class="line">$data = xhprof_disable();</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"E:\phpStudy\WWW\xhprof\xhprof-0.9.4\xhprof_lib\utils\xhprof_lib.php"</span>;</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"E:\phpStudy\WWW\xhprof\xhprof-0.9.4\xhprof_lib\utils\xhprof_runs.php"</span>;</span><br><span class="line">$objXhprofRun = <span class="keyword">new</span> XHProfRuns_Default();</span><br><span class="line">$run_id = $objXhprofRun-&gt;save_run($data, <span class="string">"xhprof"</span>);</span><br><span class="line">var_dump($run_id);    <span class="comment">//输出日志的id</span></span><br><span class="line"><span class="comment">//访问 http://localhost/xhprof/xhprof-0.9.4/xhprof_html/</span></span><br></pre></td></tr></table></figure>
 <h2 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h2><p>在view full callgraph，查看图表分析的时候，出现错误</p>
 <blockquote>
 <p>failed to execute cmd: “dot -Tpng”. stderr: `’dot’ 不是内部或外部命令，也不是可运行的程序 或批处理文件。</p>
 </blockquote>
 <p>在xhprof调试输出目录，找到 xhprof_generate_image_by_dot 函数</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-</pre></td><td class="code"><pre><span class="line">$descriptorspec = <span class="keyword">array</span>(</span>
-<span class="line">       <span class="comment">// stdin is a pipe that the child will read from</span></span>
-<span class="line">       <span class="number">0</span> =&gt; <span class="keyword">array</span>(<span class="string">"pipe"</span>, <span class="string">"r"</span>),</span>
-<span class="line">       <span class="comment">// stdout is a pipe that the child will write to</span></span>
-<span class="line">       <span class="number">1</span> =&gt; <span class="keyword">array</span>(<span class="string">"pipe"</span>, <span class="string">"w"</span>),</span>
-<span class="line">       <span class="comment">// stderr is a pipe that the child will write to</span></span>
-<span class="line">       <span class="number">2</span> =&gt; <span class="keyword">array</span>(<span class="string">"pipe"</span>, <span class="string">"w"</span>)</span>
-<span class="line">);</span>
-<span class="line">$cmd = <span class="string">"dot -T"</span>.$type;</span>
-<span class="line">$process = proc_open($cmd, $descriptorspec, $pipes, <span class="string">"/tmp"</span>, <span class="keyword">array</span>());</span>
-</pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$descriptorspec = <span class="keyword">array</span>(</span><br><span class="line">       <span class="comment">// stdin is a pipe that the child will read from</span></span><br><span class="line">       <span class="number">0</span> =&gt; <span class="keyword">array</span>(<span class="string">"pipe"</span>, <span class="string">"r"</span>),</span><br><span class="line">       <span class="comment">// stdout is a pipe that the child will write to</span></span><br><span class="line">       <span class="number">1</span> =&gt; <span class="keyword">array</span>(<span class="string">"pipe"</span>, <span class="string">"w"</span>),</span><br><span class="line">       <span class="comment">// stderr is a pipe that the child will write to</span></span><br><span class="line">       <span class="number">2</span> =&gt; <span class="keyword">array</span>(<span class="string">"pipe"</span>, <span class="string">"w"</span>)</span><br><span class="line">);</span><br><span class="line">$cmd = <span class="string">"dot -T"</span>.$type;</span><br><span class="line">$process = proc_open($cmd, $descriptorspec, $pipes, <span class="string">"/tmp"</span>, <span class="keyword">array</span>());</span><br></pre></td></tr></table></figure>
 <p>$cmd = “dot -T”.$type; 这里加入Graphviz的bin路径 改成 $cmd = “D:/Graphviz2.38/bin/dot -T”.$type;</p>
 
     </div>

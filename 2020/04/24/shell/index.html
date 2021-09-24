@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="ffmpeg 视频转gif1 2 3 4 5 6 7 8 #!/bin/sh start_time=18:32 duration=10 palette=&quot;palette.png&quot; filters=&quot;fps=15,scale=320:-1:flags=lanczos&quot;  ffmpeg -v warning -ss $start_time -t $duration -i 1.mp4 -r 20 -v">
+  <meta name="description" content="ffmpeg 视频转gif12345678#!/bin/shstart_time=18:32duration=10palette=&quot;palette.png&quot;filters=&quot;fps=15,scale=320:-1:flags=lanczos&quot;ffmpeg -v warning -ss $start_time -t $duration -i 1.mp4 -r 20 -vf &quot;$filters,pa">
 <meta name="keywords" content="shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell">
 <meta property="og:url" content="https://zhon9.github.io/2020/04/24/shell/index.html">
 <meta property="og:site_name" content="Lv 2">
-<meta property="og:description" content="ffmpeg 视频转gif1 2 3 4 5 6 7 8 #!/bin/sh start_time=18:32 duration=10 palette=&quot;palette.png&quot; filters=&quot;fps=15,scale=320:-1:flags=lanczos&quot;  ffmpeg -v warning -ss $start_time -t $duration -i 1.mp4 -r 20 -v">
+<meta property="og:description" content="ffmpeg 视频转gif12345678#!/bin/shstart_time=18:32duration=10palette=&quot;palette.png&quot;filters=&quot;fps=15,scale=320:-1:flags=lanczos&quot;ffmpeg -v warning -ss $start_time -t $duration -i 1.mp4 -r 20 -vf &quot;$filters,pa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2021-09-16T01:54:08.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell">
-<meta name="twitter:description" content="ffmpeg 视频转gif1 2 3 4 5 6 7 8 #!/bin/sh start_time=18:32 duration=10 palette=&quot;palette.png&quot; filters=&quot;fps=15,scale=320:-1:flags=lanczos&quot;  ffmpeg -v warning -ss $start_time -t $duration -i 1.mp4 -r 20 -v">
+<meta name="twitter:description" content="ffmpeg 视频转gif12345678#!/bin/shstart_time=18:32duration=10palette=&quot;palette.png&quot;filters=&quot;fps=15,scale=320:-1:flags=lanczos&quot;ffmpeg -v warning -ss $start_time -t $duration -i 1.mp4 -r 20 -vf &quot;$filters,pa">
   <link rel="canonical" href="https://zhon9.github.io/2020/04/24/shell/">
 
 
@@ -279,23 +279,7 @@
 
       
         <a id="more"></a>
-<p>ffmpeg 视频转gif<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-</pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span>
-<span class="line">start_time=18:32</span>
-<span class="line">duration=10</span>
-<span class="line">palette=<span class="string">"palette.png"</span></span>
-<span class="line">filters=<span class="string">"fps=15,scale=320:-1:flags=lanczos"</span></span>
-<span class="line"></span>
-<span class="line">ffmpeg -v warning -ss <span class="variable">$start_time</span> -t <span class="variable">$duration</span> -i 1.mp4 -r 20 -vf <span class="string">"<span class="variable">$filters</span>,palettegen"</span> -y palette.png</span>
-<span class="line">ffmpeg -v warning -ss <span class="variable">$start_time</span> -t <span class="variable">$duration</span> -i 1.mp4 -i palette.png -r 15 -lavfi <span class="string">"<span class="variable">$filters</span> [x]; [x][1:v] paletteuse"</span> -y 1.gif</span>
-</pre></td></tr></table></figure></p>
+<p>ffmpeg 视频转gif<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">start_time=18:32</span><br><span class="line">duration=10</span><br><span class="line">palette=<span class="string">"palette.png"</span></span><br><span class="line">filters=<span class="string">"fps=15,scale=320:-1:flags=lanczos"</span></span><br><span class="line"></span><br><span class="line">ffmpeg -v warning -ss <span class="variable">$start_time</span> -t <span class="variable">$duration</span> -i 1.mp4 -r 20 -vf <span class="string">"<span class="variable">$filters</span>,palettegen"</span> -y palette.png</span><br><span class="line">ffmpeg -v warning -ss <span class="variable">$start_time</span> -t <span class="variable">$duration</span> -i 1.mp4 -i palette.png -r 15 -lavfi <span class="string">"<span class="variable">$filters</span> [x]; [x][1:v] paletteuse"</span> -y 1.gif</span><br></pre></td></tr></table></figure></p>
 
     </div>
 

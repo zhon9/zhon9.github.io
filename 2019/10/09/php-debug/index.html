@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="利用symfony/var-dumper包中的dump()函数，格式化输出变量 执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。  在php.ini文件中加入一行: 1 2 auto_prepend_file = $&amp;#123;HOME&amp;#125;/.co">
+  <meta name="description" content="利用symfony/var-dumper包中的dump()函数，格式化输出变量 执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。  在php.ini文件中加入一行: 12auto_prepend_file = $&amp;#123;HOME&amp;#125;/.conf">
 <meta name="keywords" content="tool,windows,php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php debug">
 <meta property="og:url" content="https://zhon9.github.io/2019/10/09/php-debug/index.html">
 <meta property="og:site_name" content="Lv 2">
-<meta property="og:description" content="利用symfony/var-dumper包中的dump()函数，格式化输出变量 执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。  在php.ini文件中加入一行: 1 2 auto_prepend_file = $&amp;#123;HOME&amp;#125;/.co">
+<meta property="og:description" content="利用symfony/var-dumper包中的dump()函数，格式化输出变量 执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。  在php.ini文件中加入一行: 12auto_prepend_file = $&amp;#123;HOME&amp;#125;/.conf">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2021-09-16T01:54:08.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php debug">
-<meta name="twitter:description" content="利用symfony/var-dumper包中的dump()函数，格式化输出变量 执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。  在php.ini文件中加入一行: 1 2 auto_prepend_file = $&amp;#123;HOME&amp;#125;/.co">
+<meta name="twitter:description" content="利用symfony/var-dumper包中的dump()函数，格式化输出变量 执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。  在php.ini文件中加入一行: 12auto_prepend_file = $&amp;#123;HOME&amp;#125;/.conf">
   <link rel="canonical" href="https://zhon9.github.io/2019/10/09/php-debug/">
 
 
@@ -282,60 +282,20 @@
 <li><p>执行 composer global require symfony/var-dumper ，全局安装var-dumper包，默认会安装到${HOME}/.config/composer目录。</p>
 </li>
 <li><p>在php.ini文件中加入一行:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-</pre></td><td class="code"><pre><span class="line">auto_prepend_file = $&#123;HOME&#125;/.config/composer/vendor/autoload.php</span>
-<span class="line"><span class="comment">//auto_prepend_file可以简单地理解成：执行所有的php代码之前先include你指定的文件</span></span>
-</pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto_prepend_file = $&#123;HOME&#125;/.config/composer/vendor/autoload.php</span><br><span class="line"><span class="comment">//auto_prepend_file可以简单地理解成：执行所有的php代码之前先include你指定的文件</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>从此以后，在你任意的php项目中调用dump()</p>
 <h3 id="windows安装xdebug"><a href="#windows安装xdebug" class="headerlink" title="windows安装xdebug"></a>windows安装xdebug</h3><ol>
-<li><p>下载 xdebug.dll，地址：<a href="https://xdebug.org/download.php" target="_blank" rel="external">https://xdebug.org/download.php</a></p>
+<li><p>下载 xdebug.dll，地址：<a href="https://xdebug.org/download.php" target="_blank" rel="noopener">https://xdebug.org/download.php</a></p>
 </li>
 <li><p>放到php安装目录的ext下</p>
 </li>
 <li><p>配置php.ini</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-</pre></td><td class="code"><pre><span class="line">extension=<span class="string">"扩展的绝对路径"</span></span>
-<span class="line"><span class="comment">//代码跟踪日志文件位置,注意要先新建这个traces目录，并设置777</span></span>
-<span class="line">xdebug.trace_output_dir = /tmp/traces</span>
-<span class="line"><span class="comment">//代码跟踪日志文件名格式 </span></span>
-<span class="line">xdebug.trace_output_name = trace.%c.%p</span>
-<span class="line"><span class="comment">//trace中显示函数的参数值，这个很有用，待会细说</span></span>
-<span class="line">xdebug.collect_params = <span class="number">4</span></span>
-<span class="line">xdebug.collect_includes = On</span>
-<span class="line">xdebug.collect_return = On</span>
-<span class="line">xdebug.show_mem_delta = On</span>
-<span class="line"><span class="comment">//var_display_max_depth这个参数也很有用。用来设置数组或者对象显示的最大层级。</span></span>
-<span class="line"><span class="comment">//默认是3。参见官方文档的说明：Controls how many nested levels of array elements </span></span>
-<span class="line"><span class="comment">//and object properties are when variables are displayed </span></span>
-<span class="line"><span class="comment">//with either xdebug_var_dump(), xdebug.show_local_vars or through Function Traces.</span></span>
-<span class="line">xdebug.var_display_max_depth = <span class="number">2</span></span>
-</pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extension=<span class="string">"扩展的绝对路径"</span></span><br><span class="line"><span class="comment">//代码跟踪日志文件位置,注意要先新建这个traces目录，并设置777</span></span><br><span class="line">xdebug.trace_output_dir = /tmp/traces</span><br><span class="line"><span class="comment">//代码跟踪日志文件名格式 </span></span><br><span class="line">xdebug.trace_output_name = trace.%c.%p</span><br><span class="line"><span class="comment">//trace中显示函数的参数值，这个很有用，待会细说</span></span><br><span class="line">xdebug.collect_params = <span class="number">4</span></span><br><span class="line">xdebug.collect_includes = On</span><br><span class="line">xdebug.collect_return = On</span><br><span class="line">xdebug.show_mem_delta = On</span><br><span class="line"><span class="comment">//var_display_max_depth这个参数也很有用。用来设置数组或者对象显示的最大层级。</span></span><br><span class="line"><span class="comment">//默认是3。参见官方文档的说明：Controls how many nested levels of array elements </span></span><br><span class="line"><span class="comment">//and object properties are when variables are displayed </span></span><br><span class="line"><span class="comment">//with either xdebug_var_dump(), xdebug.show_local_vars or through Function Traces.</span></span><br><span class="line">xdebug.var_display_max_depth = <span class="number">2</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">xdebug_start_trace();</span>
-<span class="line"><span class="comment">/* 业务代码     */</span></span>
-<span class="line">xdebug_stop_trace();</span>
-</pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xdebug_start_trace();</span><br><span class="line"><span class="comment">/* 业务代码     */</span></span><br><span class="line">xdebug_stop_trace();</span><br></pre></td></tr></table></figure>
     </div>
 
     

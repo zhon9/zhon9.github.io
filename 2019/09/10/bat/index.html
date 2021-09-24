@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="ffmpeg1 2 3 4 5 6 # 视频第一帧生成图片 ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png # 视频第一秒生成图片 ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png # 视频分离音频 ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3  rename.bat1 ren *.下载 *.  re">
+  <meta name="description" content="ffmpeg123456# 视频第一帧生成图片ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png# 视频第一秒生成图片ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png# 视频分离音频ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3 rename.bat1ren *.下载 *. rename2.bat将当前目录">
 <meta name="keywords" content="bat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="batch file">
 <meta property="og:url" content="https://zhon9.github.io/2019/09/10/bat/index.html">
 <meta property="og:site_name" content="Lv 2">
-<meta property="og:description" content="ffmpeg1 2 3 4 5 6 # 视频第一帧生成图片 ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png # 视频第一秒生成图片 ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png # 视频分离音频 ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3  rename.bat1 ren *.下载 *.  re">
+<meta property="og:description" content="ffmpeg123456# 视频第一帧生成图片ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png# 视频第一秒生成图片ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png# 视频分离音频ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3 rename.bat1ren *.下载 *. rename2.bat将当前目录">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2021-09-16T02:03:30.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="batch file">
-<meta name="twitter:description" content="ffmpeg1 2 3 4 5 6 # 视频第一帧生成图片 ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png # 视频第一秒生成图片 ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png # 视频分离音频 ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3  rename.bat1 ren *.下载 *.  re">
+<meta name="twitter:description" content="ffmpeg123456# 视频第一帧生成图片ffmpeg -i a.mp4 -y -f image2 -frames 1 a.png# 视频第一秒生成图片ffmpeg -i a.mp4 -y -f image2 -ss 1 a.png# 视频分离音频ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3 rename.bat1ren *.下载 *. rename2.bat将当前目录">
   <link rel="canonical" href="https://zhon9.github.io/2019/09/10/bat/">
 
 
@@ -278,115 +278,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line"># 视频第一帧生成图片</span>
-<span class="line">ffmpeg -i a.mp4 -y -f image2 -frames <span class="number">1</span> a.png</span>
-<span class="line"># 视频第一秒生成图片</span>
-<span class="line">ffmpeg -i a.mp4 -y -f image2 -ss <span class="number">1</span> a.png</span>
-<span class="line"># 视频分离音频</span>
-<span class="line">ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3</span>
-</pre></td></tr></table></figure>
-<h3 id="rename-bat"><a href="#rename-bat" class="headerlink" title="rename.bat"></a>rename.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="built_in">ren</span> *.下载 *.</span>
-</pre></td></tr></table></figure>
-<h3 id="rename2-bat"><a href="#rename2-bat" class="headerlink" title="rename2.bat"></a>rename2.bat</h3><p>将当前目录的 aa (1).jpg 重命名 aa1.jpg<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-</pre></td><td class="code"><pre><span class="line">@<span class="built_in">Echo</span> Off&amp;<span class="built_in">SetLocal</span> ENABLEDELAYEDEXPANSION</span>
-<span class="line"><span class="keyword">FOR</span> <span class="variable">%%a</span> <span class="keyword">in</span> (*) <span class="keyword">do</span> (</span>
-<span class="line"><span class="built_in">echo</span> 正在处理 <span class="variable">%%a</span></span>
-<span class="line"><span class="built_in">set</span> "name=<span class="variable">%%a</span>"</span>
-<span class="line"><span class="built_in">set</span> "name=!name: (=!"</span>
-<span class="line"><span class="built_in">set</span> "name=<span class="variable">!name:)=!</span>"</span>
-<span class="line"><span class="built_in">ren</span> "<span class="variable">%%a</span>" "<span class="variable">!name!</span>"</span>
-<span class="line">)</span>
-</pre></td></tr></table></figure></p>
-<h3 id="heiping-bat"><a href="#heiping-bat" class="headerlink" title="heiping.bat"></a>heiping.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="built_in">start</span> C:\Windows\System32\scrnsave.scr /s</span>
-</pre></td></tr></table></figure>
-<h3 id="tree-bat"><a href="#tree-bat" class="headerlink" title="tree.bat"></a>tree.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span> /o:-d 文件夹/b&gt;list.txt</span>
-</pre></td></tr></table></figure>
-<h3 id="youtube-dl-bat"><a href="#youtube-dl-bat" class="headerlink" title="youtube-dl.bat"></a>youtube-dl.bat</h3><p>youtube-dl<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span>
-<span class="line">:download</span>
-<span class="line"><span class="built_in">set</span> /p input=input video link:</span>
-<span class="line"><span class="built_in">set</span> input=<span class="variable">%input:&amp;=^^^&amp;%</span></span>
-<span class="line">youtube-dl --proxy socks5://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">10808</span> -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio --merge-output-<span class="built_in">format</span> mp4 <span class="variable">%input%</span></span>
-<span class="line"><span class="keyword">goto</span> :download</span>
-</pre></td></tr></table></figure></p>
-<h3 id="pdf-转-epub"><a href="#pdf-转-epub" class="headerlink" title="pdf 转 epub"></a>pdf 转 epub</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line">docker run -ti --rm -v /share:/temp dodeeric/pdf2epubex pdf2epubEX <span class="number">1</span>.pdf</span>
-</pre></td></tr></table></figure>
-<h3 id="testping-bat"><a href="#testping-bat" class="headerlink" title="testping.bat"></a>testping.bat</h3><p>来网通知<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-</pre></td><td class="code"><pre><span class="line">@<span class="built_in">setlocal</span> enableextensions enabledelayedexpansion</span>
-<span class="line">@<span class="built_in">echo</span> off</span>
-<span class="line"><span class="built_in">set</span> ipaddr=www.baidu.com</span>
-<span class="line"><span class="built_in">set</span> oldstate=neither</span>
-<span class="line">:loop</span>
-<span class="line"><span class="built_in">ping</span> -n <span class="number">1</span> <span class="variable">!ipaddr!</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span>
-<span class="line"><span class="keyword">if</span> <span class="variable">!errorlevel!</span>==<span class="number">0</span> <span class="built_in">start</span> wmplayer e:\system.wav</span>
-<span class="line">timeout <span class="number">2</span></span>
-<span class="line"><span class="keyword">goto</span> :loop</span>
-<span class="line"><span class="built_in">endlocal</span></span>
-</pre></td></tr></table></figure></p>
-<h3 id="testping2-bat"><a href="#testping2-bat" class="headerlink" title="testping2.bat"></a>testping2.bat</h3><p>网络状态改变通知<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-</pre></td><td class="code"><pre><span class="line">@<span class="built_in">setlocal</span> enableextensions enabledelayedexpansion</span>
-<span class="line">@<span class="built_in">echo</span> off</span>
-<span class="line"><span class="built_in">set</span> ipaddr=www.baidu.com</span>
-<span class="line"><span class="built_in">set</span> oldstate=neither</span>
-<span class="line">:loop</span>
-<span class="line"><span class="built_in">set</span> state=up</span>
-<span class="line"><span class="built_in">ping</span> -n <span class="number">1</span> <span class="variable">!ipaddr!</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span>
-<span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">!errorlevel!</span>==<span class="number">0</span> <span class="built_in">set</span> state=down</span>
-<span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">!state!</span>==<span class="variable">!oldstate!</span> (</span>
-<span class="line">    <span class="built_in">echo</span>.Link is <span class="variable">!state!</span></span>
-<span class="line">    <span class="built_in">start</span> wmplayer e:\system.wav</span>
-<span class="line">    <span class="built_in">set</span> oldstate=<span class="variable">!state!</span></span>
-<span class="line">)</span>
-<span class="line"><span class="built_in">ping</span> -n <span class="number">2</span> <span class="number">127</span>.<span class="number">1</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span>
-<span class="line"><span class="keyword">goto</span> :loop</span>
-<span class="line"><span class="built_in">endlocal</span></span>
-</pre></td></tr></table></figure></p>
+        <h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 视频第一帧生成图片</span><br><span class="line">ffmpeg -i a.mp4 -y -f image2 -frames <span class="number">1</span> a.png</span><br><span class="line"># 视频第一秒生成图片</span><br><span class="line">ffmpeg -i a.mp4 -y -f image2 -ss <span class="number">1</span> a.png</span><br><span class="line"># 视频分离音频</span><br><span class="line">ffmpeg -i p1.mp4 -f mp3 -vn p1.mp3</span><br></pre></td></tr></table></figure>
+<h3 id="rename-bat"><a href="#rename-bat" class="headerlink" title="rename.bat"></a>rename.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ren</span> *.下载 *.</span><br></pre></td></tr></table></figure>
+<h3 id="rename2-bat"><a href="#rename2-bat" class="headerlink" title="rename2.bat"></a>rename2.bat</h3><p>将当前目录的 aa (1).jpg 重命名 aa1.jpg<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">Echo</span> Off&amp;<span class="built_in">SetLocal</span> ENABLEDELAYEDEXPANSION</span><br><span class="line"><span class="keyword">FOR</span> <span class="variable">%%a</span> <span class="keyword">in</span> (*) <span class="keyword">do</span> (</span><br><span class="line"><span class="built_in">echo</span> 正在处理 <span class="variable">%%a</span></span><br><span class="line"><span class="built_in">set</span> "name=<span class="variable">%%a</span>"</span><br><span class="line"><span class="built_in">set</span> "name=!name: (=!"</span><br><span class="line"><span class="built_in">set</span> "name=<span class="variable">!name:)=!</span>"</span><br><span class="line"><span class="built_in">ren</span> "<span class="variable">%%a</span>" "<span class="variable">!name!</span>"</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<h3 id="heiping-bat"><a href="#heiping-bat" class="headerlink" title="heiping.bat"></a>heiping.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">start</span> C:\Windows\System32\scrnsave.scr /s</span><br></pre></td></tr></table></figure>
+<h3 id="tree-bat"><a href="#tree-bat" class="headerlink" title="tree.bat"></a>tree.bat</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span> /o:-d 文件夹/b&gt;list.txt</span><br></pre></td></tr></table></figure>
+<h3 id="youtube-dl-bat"><a href="#youtube-dl-bat" class="headerlink" title="youtube-dl.bat"></a>youtube-dl.bat</h3><p>youtube-dl<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:download</span><br><span class="line"><span class="built_in">set</span> /p input=input video link:</span><br><span class="line"><span class="built_in">set</span> input=<span class="variable">%input:&amp;=^^^&amp;%</span></span><br><span class="line">youtube-dl --proxy socks5://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">10808</span> -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio --merge-output-<span class="built_in">format</span> mp4 <span class="variable">%input%</span></span><br><span class="line"><span class="keyword">goto</span> :download</span><br></pre></td></tr></table></figure></p>
+<h3 id="pdf-转-epub"><a href="#pdf-转-epub" class="headerlink" title="pdf 转 epub"></a>pdf 转 epub</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -ti --rm -v /share:/temp dodeeric/pdf2epubex pdf2epubEX <span class="number">1</span>.pdf</span><br></pre></td></tr></table></figure>
+<h3 id="testping-bat"><a href="#testping-bat" class="headerlink" title="testping.bat"></a>testping.bat</h3><p>来网通知<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">setlocal</span> enableextensions enabledelayedexpansion</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> ipaddr=www.baidu.com</span><br><span class="line"><span class="built_in">set</span> oldstate=neither</span><br><span class="line">:loop</span><br><span class="line"><span class="built_in">ping</span> -n <span class="number">1</span> <span class="variable">!ipaddr!</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span><br><span class="line"><span class="keyword">if</span> <span class="variable">!errorlevel!</span>==<span class="number">0</span> <span class="built_in">start</span> wmplayer e:\system.wav</span><br><span class="line">timeout <span class="number">2</span></span><br><span class="line"><span class="keyword">goto</span> :loop</span><br><span class="line"><span class="built_in">endlocal</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="testping2-bat"><a href="#testping2-bat" class="headerlink" title="testping2.bat"></a>testping2.bat</h3><p>网络状态改变通知<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">setlocal</span> enableextensions enabledelayedexpansion</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> ipaddr=www.baidu.com</span><br><span class="line"><span class="built_in">set</span> oldstate=neither</span><br><span class="line">:loop</span><br><span class="line"><span class="built_in">set</span> state=up</span><br><span class="line"><span class="built_in">ping</span> -n <span class="number">1</span> <span class="variable">!ipaddr!</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">!errorlevel!</span>==<span class="number">0</span> <span class="built_in">set</span> state=down</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">!state!</span>==<span class="variable">!oldstate!</span> (</span><br><span class="line">    <span class="built_in">echo</span>.Link is <span class="variable">!state!</span></span><br><span class="line">    <span class="built_in">start</span> wmplayer e:\system.wav</span><br><span class="line">    <span class="built_in">set</span> oldstate=<span class="variable">!state!</span></span><br><span class="line">)</span><br><span class="line"><span class="built_in">ping</span> -n <span class="number">2</span> <span class="number">127</span>.<span class="number">1</span> &gt;<span class="built_in">nul</span>: <span class="number">2</span>&gt;<span class="built_in">nul</span>:</span><br><span class="line"><span class="keyword">goto</span> :loop</span><br><span class="line"><span class="built_in">endlocal</span></span><br></pre></td></tr></table></figure></p>
 
     </div>
 

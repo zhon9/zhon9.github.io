@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="备份全部数据库1 2 mysqldump -uroot -p --all-databases &amp;gt; sqlfile.sql source d:\sqlfile.sql;	// 导入  删除table的主键字段，重新添加主键，让自增id重新排序1 2 alter table dk_wbacategory drop column cate_id; alter table dk_wbacategor">
+  <meta name="description" content="备份全部数据库12mysqldump -uroot -p --all-databases &amp;gt; sqlfile.sqlsource d:\sqlfile.sql;	// 导入 删除table的主键字段，重新添加主键，让自增id重新排序12alter table dk_wbacategory drop column cate_id;alter table dk_wbacategory add c">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql note">
 <meta property="og:url" content="https://zhon9.github.io/2019/09/10/mysql-note/index.html">
 <meta property="og:site_name" content="Lv 2">
-<meta property="og:description" content="备份全部数据库1 2 mysqldump -uroot -p --all-databases &amp;gt; sqlfile.sql source d:\sqlfile.sql;	// 导入  删除table的主键字段，重新添加主键，让自增id重新排序1 2 alter table dk_wbacategory drop column cate_id; alter table dk_wbacategor">
+<meta property="og:description" content="备份全部数据库12mysqldump -uroot -p --all-databases &amp;gt; sqlfile.sqlsource d:\sqlfile.sql;	// 导入 删除table的主键字段，重新添加主键，让自增id重新排序12alter table dk_wbacategory drop column cate_id;alter table dk_wbacategory add c">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2021-09-16T01:54:08.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql note">
-<meta name="twitter:description" content="备份全部数据库1 2 mysqldump -uroot -p --all-databases &amp;gt; sqlfile.sql source d:\sqlfile.sql;	// 导入  删除table的主键字段，重新添加主键，让自增id重新排序1 2 alter table dk_wbacategory drop column cate_id; alter table dk_wbacategor">
+<meta name="twitter:description" content="备份全部数据库12mysqldump -uroot -p --all-databases &amp;gt; sqlfile.sqlsource d:\sqlfile.sql;	// 导入 删除table的主键字段，重新添加主键，让自增id重新排序12alter table dk_wbacategory drop column cate_id;alter table dk_wbacategory add c">
   <link rel="canonical" href="https://zhon9.github.io/2019/09/10/mysql-note/">
 
 
@@ -278,84 +278,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="备份全部数据库"><a href="#备份全部数据库" class="headerlink" title="备份全部数据库"></a>备份全部数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-</pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p --all-databases &gt; sqlfile.sql</span>
-<span class="line"><span class="built_in">source</span> d:\sqlfile.sql;	// 导入</span>
-</pre></td></tr></table></figure>
-<h3 id="删除table的主键字段，重新添加主键，让自增id重新排序"><a href="#删除table的主键字段，重新添加主键，让自增id重新排序" class="headerlink" title="删除table的主键字段，重新添加主键，让自增id重新排序"></a>删除table的主键字段，重新添加主键，让自增id重新排序</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> dk_wbacategory <span class="keyword">drop</span> <span class="keyword">column</span> cate_id;</span>
-<span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> dk_wbacategory <span class="keyword">add</span> cate_id <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span> auto_increment <span class="keyword">first</span>;</span>
-</pre></td></tr></table></figure>
-<h3 id="复制记录"><a href="#复制记录" class="headerlink" title="复制记录"></a>复制记录</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dk_wbarticle <span class="keyword">select</span> * <span class="keyword">from</span> dk_wbarticle <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">55</span></span>
-</pre></td></tr></table></figure>
-<h3 id="explain语句，分析查询结果"><a href="#explain语句，分析查询结果" class="headerlink" title="explain语句，分析查询结果"></a>explain语句，分析查询结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-</pre></td><td class="code"><pre><span class="line">explain + select 语句</span>
-<span class="line"></span>
-<span class="line">+----+-------------+-----------+-------+---------------+---------+---------+-------+</span>
-<span class="line">| id | select_type | table | <span class="built_in">type</span> | possible_keys | key | key_len | ref | rows | Extra |</span>
-<span class="line">+----+-------------+-----------+-------+---------------+---------+---------+-------+</span>
-<span class="line">| 1 | SIMPLE | ecs_goods | const | PRIMARY | PRIMARY | 3 | const | 1 | |</span>
-<span class="line">+----+-------------+-----------+-------+---------------+---------+---------+-------+</span>
-<span class="line">1 row <span class="keyword">in</span> <span class="built_in">set</span> (0.02 sec)</span>
-<span class="line"></span>
-<span class="line">- select_type：select查询的类型，主要是区别普通查询和联合查询、子查询之类的复杂查询。</span>
-<span class="line">- <span class="built_in">type</span>：<span class="built_in">type</span>显示的是访问类型，是较为重要的一个指标，结果值从好到坏依次是：system &gt; const &gt; eq_ref &gt; ref &gt; fulltext &gt; ref_or_null &gt; index_merge &gt; unique_subquery &gt; index_subquery &gt; range &gt; index &gt; ALL</span>
-<span class="line">一般来说，得保证查询至少达到range级别，最好能达到ref。</span>
-<span class="line">- possible_keys：指出MySQL能使用哪个索引在该表中找到行。如果是空的，没有相关的索引。这时要提高性能，可通过检验WHERE子句，看是否引用某些字段，或者检查字段不是适合索引。</span>
-<span class="line">- key：显示MySQL实际决定使用的键。如果没有索引被选择，键是NULL。</span>
-<span class="line">- key_len：显示MySQL决定使用的键长度。如果键是NULL，长度就是NULL。文档提示特别注意这个值可以得出一个多重主键里mysql实际使用了哪一部分。</span>
-<span class="line">- ref：显示哪个字段或常数与key一起被使用。</span>
-<span class="line">- Extra：如果是Only index，这意味着信息只用索引树中的信息检索出的，这比扫描整个表要快。</span>
-<span class="line">如果是<span class="built_in">where</span> used，就是使用上了<span class="built_in">where</span>限制。</span>
-<span class="line">如果是impossible <span class="built_in">where</span> 表示用不着<span class="built_in">where</span>，一般就是没查出来啥。</span>
-<span class="line">如果此信息显示Using filesort或者Using temporary的话会很吃力，WHERE和ORDER BY的索引经常无法兼顾，如果按照WHERE来确定索引，那么在ORDER BY时，就必然会引起Using filesort，这就要看是先过滤再排序划算，还是先排序再过滤划算.</span>
-</pre></td></tr></table></figure>
-<h3 id="分析mysql语句性能"><a href="#分析mysql语句性能" class="headerlink" title="分析mysql语句性能"></a>分析mysql语句性能</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> profiling=<span class="number">1</span>;	// 开启功能</span>
-<span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span>; </span>
-<span class="line"><span class="keyword">show</span> <span class="keyword">profiles</span>; 		</span>
-<span class="line"><span class="keyword">show</span> profile <span class="keyword">for</span> <span class="keyword">query</span> n;     // n对应<span class="keyword">SHOW</span> <span class="keyword">PROFILES</span>输出中的Query_ID</span>
-</pre></td></tr></table></figure>
-<h3 id="查看数据库大小"><a href="#查看数据库大小" class="headerlink" title="查看数据库大小"></a>查看数据库大小</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>((<span class="keyword">sum</span>(data_length)+<span class="keyword">sum</span>(index_length))/<span class="number">1024</span>/<span class="number">1024</span>,<span class="string">'m'</span>) <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="string">'数据库名'</span>;</span>
-</pre></td></tr></table></figure>
-<h3 id="查看数据库各个表的大小"><a href="#查看数据库各个表的大小" class="headerlink" title="查看数据库各个表的大小"></a>查看数据库各个表的大小</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> table_name,<span class="keyword">concat</span>((data_length+index_length)/<span class="number">1024</span>/<span class="number">1024</span>,<span class="string">'m'</span>) daxiao,table_rows <span class="keyword">as</span> <span class="keyword">rows</span> <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="string">'数据库名'</span> <span class="keyword">order</span> <span class="keyword">by</span> daxiao <span class="keyword">desc</span>,<span class="keyword">rows</span> <span class="keyword">desc</span>;</span>
-</pre></td></tr></table></figure>
-<h3 id="批量修改数据表前缀"><a href="#批量修改数据表前缀" class="headerlink" title="批量修改数据表前缀"></a>批量修改数据表前缀</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="string">'ALTER TABLE '</span>,table_name,<span class="string">' RENAME TO pt_'</span>,<span class="keyword">substring</span>(table_name, <span class="number">4</span>),<span class="string">';'</span>) <span class="keyword">FROM</span> information_schema. <span class="keyword">TABLES</span> <span class="keyword">WHERE</span> table_name <span class="keyword">LIKE</span> <span class="string">'li%'</span>;</span>
-</pre></td></tr></table></figure>
-<h3 id="mysql-search-duplicate-rows"><a href="#mysql-search-duplicate-rows" class="headerlink" title="mysql search duplicate rows"></a>mysql search duplicate rows</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="keyword">COUNT</span>(email) <span class="keyword">FROM</span> contacts <span class="keyword">GROUP</span> <span class="keyword">BY</span> email <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(email) &gt; <span class="number">1</span>;</span>
-</pre></td></tr></table></figure>
-<h3 id="mysql-delete-duplicate-rows"><a href="#mysql-delete-duplicate-rows" class="headerlink" title="mysql delete duplicate rows"></a>mysql delete duplicate rows</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> t1 <span class="keyword">FROM</span> contacts t1 <span class="keyword">INNER</span> <span class="keyword">JOIN</span> contacts t2 <span class="keyword">WHERE</span> t1.id &lt; t2.id <span class="keyword">AND</span> t1.email = t2.email;</span>
-</pre></td></tr></table></figure>
+        <h3 id="备份全部数据库"><a href="#备份全部数据库" class="headerlink" title="备份全部数据库"></a>备份全部数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p --all-databases &gt; sqlfile.sql</span><br><span class="line"><span class="built_in">source</span> d:\sqlfile.sql;	// 导入</span><br></pre></td></tr></table></figure>
+<h3 id="删除table的主键字段，重新添加主键，让自增id重新排序"><a href="#删除table的主键字段，重新添加主键，让自增id重新排序" class="headerlink" title="删除table的主键字段，重新添加主键，让自增id重新排序"></a>删除table的主键字段，重新添加主键，让自增id重新排序</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> dk_wbacategory <span class="keyword">drop</span> <span class="keyword">column</span> cate_id;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> dk_wbacategory <span class="keyword">add</span> cate_id <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span> auto_increment <span class="keyword">first</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="复制记录"><a href="#复制记录" class="headerlink" title="复制记录"></a>复制记录</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dk_wbarticle <span class="keyword">select</span> * <span class="keyword">from</span> dk_wbarticle <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">55</span></span><br></pre></td></tr></table></figure>
+<h3 id="explain语句，分析查询结果"><a href="#explain语句，分析查询结果" class="headerlink" title="explain语句，分析查询结果"></a>explain语句，分析查询结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">explain + select 语句</span><br><span class="line"></span><br><span class="line">+----+-------------+-----------+-------+---------------+---------+---------+-------+</span><br><span class="line">| id | select_type | table | <span class="built_in">type</span> | possible_keys | key | key_len | ref | rows | Extra |</span><br><span class="line">+----+-------------+-----------+-------+---------------+---------+---------+-------+</span><br><span class="line">| 1 | SIMPLE | ecs_goods | const | PRIMARY | PRIMARY | 3 | const | 1 | |</span><br><span class="line">+----+-------------+-----------+-------+---------------+---------+---------+-------+</span><br><span class="line">1 row <span class="keyword">in</span> <span class="built_in">set</span> (0.02 sec)</span><br><span class="line"></span><br><span class="line">- select_type：select查询的类型，主要是区别普通查询和联合查询、子查询之类的复杂查询。</span><br><span class="line">- <span class="built_in">type</span>：<span class="built_in">type</span>显示的是访问类型，是较为重要的一个指标，结果值从好到坏依次是：system &gt; const &gt; eq_ref &gt; ref &gt; fulltext &gt; ref_or_null &gt; index_merge &gt; unique_subquery &gt; index_subquery &gt; range &gt; index &gt; ALL</span><br><span class="line">一般来说，得保证查询至少达到range级别，最好能达到ref。</span><br><span class="line">- possible_keys：指出MySQL能使用哪个索引在该表中找到行。如果是空的，没有相关的索引。这时要提高性能，可通过检验WHERE子句，看是否引用某些字段，或者检查字段不是适合索引。</span><br><span class="line">- key：显示MySQL实际决定使用的键。如果没有索引被选择，键是NULL。</span><br><span class="line">- key_len：显示MySQL决定使用的键长度。如果键是NULL，长度就是NULL。文档提示特别注意这个值可以得出一个多重主键里mysql实际使用了哪一部分。</span><br><span class="line">- ref：显示哪个字段或常数与key一起被使用。</span><br><span class="line">- Extra：如果是Only index，这意味着信息只用索引树中的信息检索出的，这比扫描整个表要快。</span><br><span class="line">如果是<span class="built_in">where</span> used，就是使用上了<span class="built_in">where</span>限制。</span><br><span class="line">如果是impossible <span class="built_in">where</span> 表示用不着<span class="built_in">where</span>，一般就是没查出来啥。</span><br><span class="line">如果此信息显示Using filesort或者Using temporary的话会很吃力，WHERE和ORDER BY的索引经常无法兼顾，如果按照WHERE来确定索引，那么在ORDER BY时，就必然会引起Using filesort，这就要看是先过滤再排序划算，还是先排序再过滤划算.</span><br></pre></td></tr></table></figure>
+<h3 id="分析mysql语句性能"><a href="#分析mysql语句性能" class="headerlink" title="分析mysql语句性能"></a>分析mysql语句性能</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> profiling=<span class="number">1</span>;	// 开启功能</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span>; </span><br><span class="line"><span class="keyword">show</span> <span class="keyword">profiles</span>; 		</span><br><span class="line"><span class="keyword">show</span> profile <span class="keyword">for</span> <span class="keyword">query</span> n;     // n对应<span class="keyword">SHOW</span> <span class="keyword">PROFILES</span>输出中的Query_ID</span><br></pre></td></tr></table></figure>
+<h3 id="查看数据库大小"><a href="#查看数据库大小" class="headerlink" title="查看数据库大小"></a>查看数据库大小</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>((<span class="keyword">sum</span>(data_length)+<span class="keyword">sum</span>(index_length))/<span class="number">1024</span>/<span class="number">1024</span>,<span class="string">'m'</span>) <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="string">'数据库名'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="查看数据库各个表的大小"><a href="#查看数据库各个表的大小" class="headerlink" title="查看数据库各个表的大小"></a>查看数据库各个表的大小</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> table_name,<span class="keyword">concat</span>((data_length+index_length)/<span class="number">1024</span>/<span class="number">1024</span>,<span class="string">'m'</span>) daxiao,table_rows <span class="keyword">as</span> <span class="keyword">rows</span> <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="string">'数据库名'</span> <span class="keyword">order</span> <span class="keyword">by</span> daxiao <span class="keyword">desc</span>,<span class="keyword">rows</span> <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="批量修改数据表前缀"><a href="#批量修改数据表前缀" class="headerlink" title="批量修改数据表前缀"></a>批量修改数据表前缀</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="string">'ALTER TABLE '</span>,table_name,<span class="string">' RENAME TO pt_'</span>,<span class="keyword">substring</span>(table_name, <span class="number">4</span>),<span class="string">';'</span>) <span class="keyword">FROM</span> information_schema. <span class="keyword">TABLES</span> <span class="keyword">WHERE</span> table_name <span class="keyword">LIKE</span> <span class="string">'li%'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="mysql-search-duplicate-rows"><a href="#mysql-search-duplicate-rows" class="headerlink" title="mysql search duplicate rows"></a>mysql search duplicate rows</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="keyword">COUNT</span>(email) <span class="keyword">FROM</span> contacts <span class="keyword">GROUP</span> <span class="keyword">BY</span> email <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(email) &gt; <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="mysql-delete-duplicate-rows"><a href="#mysql-delete-duplicate-rows" class="headerlink" title="mysql delete duplicate rows"></a>mysql delete duplicate rows</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> t1 <span class="keyword">FROM</span> contacts t1 <span class="keyword">INNER</span> <span class="keyword">JOIN</span> contacts t2 <span class="keyword">WHERE</span> t1.id &lt; t2.id <span class="keyword">AND</span> t1.email = t2.email;</span><br></pre></td></tr></table></figure>
     </div>
 
     
